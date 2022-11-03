@@ -1,0 +1,100 @@
+.choose-tour
+  &__title
+    font-size: 24px
+    color: #FFF
+    font-family: $fonts.headings
+    font-weight: 400
+    line-height: 1.1
+    margin-bottom: 15px
+
+  &__fields
+    display: flex
+    background-color: #fff
+    border-radius: 28px
+    overflow: hidden
+    position: relative
+    z-index: 10
+
+  &__field
+    // flex: 1 1 auto
+    width: 50%
+    display: flex
+    align-items: center
+    border-left: 1px solid #EDF0F7
+
+    &:first-child
+      border-left: none
+
+    .select2
+      height: 100%
+
+      .selection
+        height: 100%
+
+      &.select2-container--open
+        .select2-selection__arrow
+          b
+            transform: rotate(180deg)
+
+    .select2-container--default .select2-selection--single
+      border: none
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered
+      font-size: 16px
+      color: #2E3035
+      font-weight: 500
+      line-height: 1
+
+    .select2-container .select2-selection--single
+      height: 100%
+      display: flex
+      align-items: center
+
+    .select2-container .select2-selection--single .select2-selection__rendered
+      padding-left: 25px
+      padding-right: 25px
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow
+      top: 50%
+      right: 20px
+      transform: translateY(-50%)
+
+      b
+        border: none
+        width: 10px
+        height: 7px
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 3.63384L2.31802 0.951858C1.9275 0.561334 1.29433 0.561333 0.903808 0.951858C0.513284 1.34238 0.513284 1.97555 0.903808 2.36607L4.64645 6.10871C4.84171 6.30398 5.1583 6.30398 5.35356 6.10871L9.0962 2.36607C9.48672 1.97555 9.48672 1.34238 9.0962 0.951858C8.70568 0.561333 8.07251 0.561334 7.68199 0.951858L5 3.63384Z' fill='%232E3035'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-size: contain
+        // transition: transform 0.3s, ease 0.3s
+
+  &__button-submit
+    margin-left: auto
+    margin-right: -2px
+
+.select2-container
+  .select2-dropdown
+    z-index: 5
+    border: 1px solid #EDF0F7
+    overflow: hidden
+
+    &.select2-dropdown--below
+      border-radius: 0 0 28px 28px
+      padding-top: 24px
+      top: -25px
+
+    &.select2-dropdown--above
+      border-radius: 28px 28px 0 0
+      padding-bottom: 24px
+      top: 25px
+
+  .select2-results__option
+    font-size: 16px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1
+    padding: 15px 25px 10px 25px
+
+    &.select2-results__option--highlighted
+      background-color: #FF0B37

@@ -1,0 +1,322 @@
+.top-panel
+  background-color: #fff
+  position: relative
+  z-index: 50
+
+  .logo
+    margin-right: 20px
+
+  &__inner
+    display: flex
+    align-items: center
+    max-width: 1680px
+    width: 100%
+    margin-right: auto
+    margin-left: auto
+    padding-left: 170px
+
+    @media (max-width: 1599px)
+      padding-left: 60px
+
+    @media (max-width: 1439px)
+      padding-left: 20px
+
+  &__button-burger
+    flex: 0 0 40px
+    width: 40px
+    max-width: 40px
+    height: 40px
+    border: none
+    padding: 0
+    background-color: #EDF0F7
+    border-radius: 50%
+    position: relative
+    cursor: pointer
+    margin-right: 20px
+
+    span
+      width: 16px
+      height: 2px
+      background-color: #000
+      border-radius: 1px
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+      &:before, &:after
+        content: ''
+        position: absolute
+        left: 0
+        width: 16px
+        height: 2px
+        background-color: #000
+        border-radius: 1px
+
+      &:before
+        top: -6px
+
+      &:after
+        bottom: -6px
+
+  &__info
+    flex: 0 0 115px
+    width: 115px
+    max-width: 115px
+    display: flex
+    flex-direction: column
+    margin-right: 45px
+
+    @media (max-width: 1439px)
+      margin-right: 20px
+
+    @media (max-width: 1279px)
+      display: none
+
+    span
+      font-size: 12px
+      color: #000
+      font-weight: 500
+      line-height: 1.1
+
+    a
+      font-size: 12px
+      color: #7A808E
+      font-weight: 600
+      line-height: 1.1
+      text-decoration: none
+      position: relative
+      align-self: flex-start
+
+      &:after
+        content: ''
+        top: 0
+        right: -20px
+        position: absolute
+        width: 14px
+        height: 12px
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='12' viewBox='0 0 14 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 1.11724C7 0.866909 7.28851 0.726684 7.48535 0.881343L13.4996 5.60684C13.7544 5.80702 13.7544 6.19297 13.4996 6.39315L7.48535 11.1187C7.28851 11.2733 7 11.1331 7 10.8828L7 8L4.42857 8C2.53502 8 1 9.53502 1 11.4286L1 11.5C1 11.7761 0.776143 12 0.500001 12C0.223859 12 1.04637e-06 11.7761 1.02008e-06 11.5L8.77257e-07 10C5.61749e-07 6.68629 2.68629 3.99999 6 3.99999L7 3.99999L7 1.11724Z' fill='%237A808E'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-size: contain
+
+  &__contacts
+    display: flex
+    align-items: center
+
+  &__social
+    text-decoration: none
+    flex: 0 0 40px
+    width: 40px
+    max-width: 40px
+    height: 40px
+    background-color: #2E3035
+    border-radius: 50%
+    display: flex !important
+    justify-content: center
+    align-items: center
+    margin-right: 10px
+
+    @media (max-width: 1360px)
+      display: none !important
+
+  &__phones
+    flex: 0 0 200px
+    width: 200px
+    max-width: 200px
+    height: 40px
+    background-color: #EDF0F7
+    border-radius: 20px
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 10px 16px 10px 12px
+    margin-right: 10px
+
+    a
+      font-size: 16px
+      color: #2E3035
+      font-weight: 500
+      line-height: 1
+      text-decoration: none
+      display: block
+      position: relative
+      z-index: 2
+
+    &:hover
+      & ^[0]
+        &__other-phones
+          opacity: 1
+          transform: translateY(0)
+          visibility: visible
+
+        &__arrow-phone
+          transform: rotate(180deg)
+
+  &__icon-phone
+    flex: 0 0 14px
+    width: 14px
+    max-width: 14px
+    height: 20px
+    position: relative
+    z-index: 2
+
+  &__arrow-phone
+    flex: 0 0 10px
+    width: 10px
+    max-width: 10px
+    height: 7px
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.00002 3.63384L2.31804 0.951858C1.92751 0.561334 1.29435 0.561333 0.903823 0.951858C0.513299 1.34238 0.513299 1.97555 0.903823 2.36607L4.64647 6.10871C4.84173 6.30398 5.15831 6.30398 5.35357 6.10871L9.09622 2.36607C9.48674 1.97555 9.48674 1.34238 9.09622 0.951858C8.70569 0.561333 8.07253 0.561334 7.682 0.951858L5.00002 3.63384Z' fill='%232E3035'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: 0 0
+    background-size: contain
+    position: relative
+    z-index: 2
+    transition: transform 0.3s, ease 0.3s
+
+  &__other-phones
+    width: 100%
+    position: absolute
+    top: 10px
+    left: 0
+    background-color: #EDF0F7
+    padding-top: 35px
+    opacity: 0
+    visibility: hidden
+    transform: translateY(-10px)
+    transition: opacity 0.3s, transform 0.3s, ease 0.3s
+    z-index: 1
+    border-radius: 20px
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+
+    & ^[0]
+      &__social
+        display: flex !important
+        margin-right: 50px
+
+        &:last-child
+          margin-right: 0
+
+        @media (min-width: 1361px)
+          display: none !important
+
+    a
+      margin-bottom: 10px
+
+  &__schedule
+    font-size: 12px
+    color: #000
+    font-weight: 500
+    line-height: 1.1
+    flex: 0 0 124px
+    width: 124px
+    max-width: 124px
+    margin-right: 10px
+
+    @media (max-width: 1279px)
+      display: none
+
+  &__email
+    font-size: 16px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1
+    text-decoration: none
+    display: flex
+    align-items: center
+    flex: 0 0 210px
+    width: 210px
+    max-width: 210px
+    height: 40px
+    background-color: #EDF0F7
+    border-radius: 20px
+    position: relative
+    display: flex
+    align-items: center
+    padding: 10px 12px
+    margin-right: 10px
+
+  &__icon-email
+    flex: 0 0 18px
+    width: 18px
+    max-width: 18px
+    height: 14px
+    margin-right: 10px
+
+  &__user-cabinet
+    margin-left: auto
+    padding: 25px 44px 25px 25px
+    transition: background-color 0.3s
+    position: relative
+    cursor: default
+
+    @media (max-width: 1599px)
+      padding-right: 30px
+
+    @media (max-width: 1439px)
+      padding-right: 20px
+
+    &:hover
+      background-color: #F2F2F2
+
+      & ^[0]
+        &__user-cabinet-menu
+          opacity: 1
+          transform: translateY(0)
+          visibility: visible
+
+  &__user-name
+    font-size: 16px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1.1
+    display: flex
+    align-items: center
+
+  &__user-icon
+    flex: 0 0 40px
+    width: 40px
+    max-width: 40px
+    height: 40px
+    background-color: #2E3035
+    border-radius: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: 10px
+
+  &__user-cabinet-menu
+    list-style: none
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
+    background-color: #F2F2F2
+    opacity: 0
+    visibility: hidden
+    transform: translateY(-10px)
+    transition: opacity 0.3s, transform 0.3s, ease 0.3s
+    padding-left: 0
+    margin: 0
+
+  &__user-cabinet-item
+    &:last-child
+      & ^[0]
+        &__user-cabinet-link
+          border-bottom: none
+
+  &__user-cabinet-link
+    font-size: 16px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1.1
+    display: flex
+    align-items: center
+    text-decoration: none
+    display: flex
+    align-items: center
+    padding: 15px 25px
+    border-bottom: 1px solid #000
