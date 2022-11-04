@@ -1,118 +1,108 @@
-.top-panel
-  background-color: #fff
-  position: relative
-  z-index: 50
+.main-menu
+  position: absolute
+  top: 100%
+  left: 0
+  width: 100%
+  min-height: 540px
+  padding-top: 65px
+  padding-bottom: 55px
+  background-color: #FFF
+  border-top: 1px solid #E0E0E0
+  z-index: 5
+  opacity: 0
+  visibility: hidden
+  transform: translateY(-50px)
+  transition: opacity 0.3s, transform 0.3s, ease 0.3s
 
-  &._is-show-menu
-    .top-panel__info, .top-panel__contacts, .top-panel__schedule, .top-panel__email, .top-panel__user-cabinet
-      opacity: 0
-      visibility: hidden
+  &._is-show
+    opacity: 1
+    visibility: visible
+    transform: translateY(0)
 
-  .logo
-    margin-right: 20px
+  @media (max-width: 767px)
+    padding-top: 35px
+    padding-bottom: 30
 
-    &__img
-      @media (max-width: 639px)
-        max-width: 180px
+  &__nav
+    display: flex
+    margin-bottom: 80px
 
-  &__inner
+    @media (max-width: 1279px)
+      flex-wrap: wrap
+
+    @media (max-width: 767px)
+      margin-bottom: 40px
+
+    ul
+      list-style: none
+      padding-left: 0
+      margin: 0
+
+      li
+        a
+          display: inline-block
+          vertical-align: top
+
+          &:hover
+            text-decoration: underline
+
+    > ul
+      width: 25%
+      margin-right: 30px
+
+      @media (max-width: 1279px)
+        margin-bottom: 20px
+
+      @media (max-width: 767px)
+        width: 50%
+        margin-right: 0
+
+      @media (max-width: 413px)
+        width: 100%
+
+      > li
+        > a
+          font-size: 20px
+          color: #333
+          font-weight: 500
+          line-height: 1.1
+          text-decoration: none
+
+        ul
+          padding-top: 15px
+
+          li
+            a
+              font-size: 14px
+              color: rgba(51, 51, 51, 0.5)
+              font-weight: 500
+              line-height: 1.1
+              text-decoration: none
+              margin-bottom: 10px
+
+  &__content
     display: flex
     align-items: center
-    max-width: 1680px
-    width: 100%
-    margin-right: auto
-    margin-left: auto
-    padding-left: 170px
+    flex-wrap: wrap
 
-    @media (max-width: 1599px)
-      padding-left: 60px
+    @media (max-width: 1279px)
+      margin-bottom: 80px
 
-    @media (max-width: 1439px)
-      padding-left: 20px
-
-  &__button-burger
-    flex: 0 0 40px
-    width: 40px
-    max-width: 40px
-    height: 40px
-    border: none
-    padding: 0
-    background-color: #EDF0F7
-    border-radius: 50%
-    position: relative
-    cursor: pointer
-    margin-right: 20px
-    transition: background-color 0.3s, ease 0.3s
-
-    &:hover
-      background-color: #FF0B37
-
-      span
-        background-color: #fff
-
-      &:before, &:after
-        background-color: #fff
-
-    &._is-active
-      background-color: #333333
-
-      span
-        background-color: #fff
-        opacity: 0
-        margin-left: -10px
-
-      &:before, &:after
-        background-color: #fff
-
-      &:before
-        top: 19px
-        transform: translateX(-50%) rotate(45deg)
-
-      &:after
-        bottom: 19px
-        transform: translateX(-50%) rotate(-45deg)
-
-    span
-      width: 16px
-      height: 2px
-      background-color: #000
-      border-radius: 1px
-      position: absolute
-      top: 50%
-      left: 50%
-      transform: translate(-50%, -50%)
-      transition: background-color 0.3s, ease 0.3s
-
-    &:before, &:after
-      content: ''
-      position: absolute
-      left: 50%
-      transform: translateX(-50%)
-      width: 16px
-      height: 2px
-      background-color: #000
-      border-radius: 1px
-      transition: background-color 0.3s, transform 0.3s, ease 0.3s
-
-    &:before
-      top: 13px
-
-    &:after
-      bottom: 13px
+    @media (max-width: 767px)
+      margin-bottom: 40px
+      display: block
 
   &__info
     flex: 0 0 115px
     width: 115px
     max-width: 115px
-    display: flex
     flex-direction: column
-    margin-right: 45px
-
-    @media (max-width: 1439px)
-      margin-right: 20px
+    margin-right: 15px
+    margin-bottom: 15px
+    display: none
 
     @media (max-width: 1279px)
-      display: none
+      display: flex
 
     span
       font-size: 12px
@@ -142,11 +132,15 @@
         background-size: contain
 
   &__contacts
-    display: flex
     align-items: center
+    display: none
+    margin-bottom: 15px
 
     @media (max-width: 1023px)
-      display: none
+      display: flex
+
+    @media (max-width: 479px)
+      flex-wrap: wrap
 
   &__social
     text-decoration: none
@@ -161,8 +155,8 @@
     align-items: center
     margin-right: 10px
 
-    @media (max-width: 1360px)
-      display: none !important
+    @media (max-width: 479px)
+      margin-bottom: 15px
 
   &__phones
     flex: 0 0 200px
@@ -236,17 +230,6 @@
     justify-content: center
     flex-wrap: wrap
 
-    & ^[0]
-      &__social
-        display: flex !important
-        margin-right: 50px
-
-        &:last-child
-          margin-right: 0
-
-        @media (min-width: 1361px)
-          display: none !important
-
     a
       margin-bottom: 10px
 
@@ -259,9 +242,11 @@
     width: 124px
     max-width: 124px
     margin-right: 10px
+    margin-bottom: 15px
+    display: none
 
     @media (max-width: 1279px)
-      display: none
+      display: block
 
   &__email
     font-size: 16px
@@ -278,13 +263,12 @@
     background-color: #EDF0F7
     border-radius: 20px
     position: relative
-    display: flex
     align-items: center
     padding: 10px 12px
-    margin-right: 10px
+    display: none
 
     @media (max-width: 1023px)
-      display: none
+      display: flex
 
   &__icon-email
     flex: 0 0 18px
@@ -293,94 +277,27 @@
     height: 14px
     margin-right: 10px
 
-  &__user-cabinet
-    margin-left: auto
-    padding: 25px 44px 25px 25px
-    transition: background-color 0.3s
-    position: relative
-    cursor: default
+  &__links
+    display: flex
+    flex-direction: column
+    margin-bottom: 40px
 
-    @media (max-width: 1599px)
-      padding-right: 30px
+    @media (max-width: 767px)
+      margin-bottom: 20px
 
-    @media (max-width: 1439px)
-      padding-right: 20px
+    a
+      font-size: 14px
+      color: rgba(51, 51, 51, 0.5)
+      font-weight: 500
+      line-height: 1.1
+      text-decoration: none
+      margin-bottom: 14px
 
-    @media (max-width: 520px)
-      padding-left: 20px
+      &:hover
+        text-decoration: underline
 
-    &:hover
-      background-color: #F2F2F2
-
-      & ^[0]
-        &__user-cabinet-menu
-          opacity: 1
-          transform: translateY(0)
-          visibility: visible
-
-  &__user-name
-    font-size: 16px
-    color: #2E3035
+  &__copy
+    font-size: 14px
+    color: #BDBDBD
     font-weight: 500
     line-height: 1.1
-    display: flex
-    align-items: center
-
-    span
-      @media (max-width: 520px)
-        display: none
-
-    & ^[0]
-      &__user-icon
-        @media (max-width: 520px)
-          margin-right: 0
-
-  &__user-icon
-    flex: 0 0 40px
-    width: 40px
-    max-width: 40px
-    height: 40px
-    background-color: #2E3035
-    border-radius: 50%
-    display: flex
-    justify-content: center
-    align-items: center
-    margin-right: 10px
-
-  &__user-cabinet-menu
-    list-style: none
-    position: absolute
-    top: 100%
-    left: 0
-    width: 100%
-    background-color: #F2F2F2
-    opacity: 0
-    visibility: hidden
-    transform: translateY(-10px)
-    transition: opacity 0.3s, transform 0.3s, ease 0.3s
-    padding-left: 0
-    margin: 0
-
-    @media (max-width: 520px)
-      width: 260px
-      left: auto
-      right: 0
-
-  &__user-cabinet-item
-    &:last-child
-      & ^[0]
-        &__user-cabinet-link
-          border-bottom: none
-
-  &__user-cabinet-link
-    font-size: 16px
-    color: #2E3035
-    font-weight: 500
-    line-height: 1.1
-    display: flex
-    align-items: center
-    text-decoration: none
-    display: flex
-    align-items: center
-    padding: 15px 25px
-    border-bottom: 1px solid #000
