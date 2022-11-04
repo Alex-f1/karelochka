@@ -2,6 +2,33 @@
   color: #fff
   height: 100%
 
+  .choose-tour
+    &__fields
+      @media (max-width: 1279px)
+        display: block
+        background-color: transparent
+
+    &__field
+      @media (max-width: 1279px)
+        width: 100%
+        height: 56px
+        margin-bottom: 25px
+        border-radius: 0
+        border-left: none
+
+      .select2-container .select2-selection--single
+        border-radius: 28px
+
+      .select2
+        &.select2-container--open
+          .select2-selection--single
+            @media (max-width: 1279px)
+              border-radius: 28px 28px 0 0 !important
+
+    &__button-submit
+      @media (max-width: 1279px)
+        width: 100%
+
   &__section
     background-repeat: no-repeat
     background-position: 50% 0
@@ -9,15 +36,40 @@
     padding-top: 35px
     padding-bottom: 35px
 
+    @media (max-width: 959px)
+      padding-top: 30px
+      padding-bottom: 30px
+
   &__section, &__inner
     height: 100%
 
   &__container
     display: flex
 
+    @media (max-width: 1279px)
+      align-items: center
+
+    @media (max-width: 959px)
+      display: block
+
+    @media (max-width: 520px)
+      margin-right: -20px
+      margin-left: -20px
+
   &__content
     width: 690px
     padding-top: 30px
+
+    @media (max-width: 959px)
+      max-width: 600px
+      width: 100%
+      margin-right: auto
+      margin-left: auto
+      padding-top: 0
+
+    @media (max-width: 520px)
+      padding-right: 20px
+      padding-left: 20px
 
   &__title
     font-size: 48px
@@ -28,6 +80,18 @@
     margin-top: 0
     margin-bottom: 60px
 
+    @media (max-width: 1279px)
+      font-size: 36px
+
+    @media (max-width: 959px)
+      margin-bottom: 30px
+
+    @media (max-width: 639px)
+      font-size: 32px
+
+    @media (max-width: 374px)
+      font-size: 28px
+
   &__slider
     flex: 0 0 570px
     width: 570px
@@ -37,7 +101,20 @@
     margin-right: -50px
 
     @media (max-width: 1360px)
-      margin-right 0
+      margin-right: 0
+
+    @media (max-width: 959px)
+      width: 100%
+      margin-right: auto
+      margin-left: auto
+      margin-top: 50px
+
+    @media (max-width: 639px)
+      max-width: 470px
+
+    @media (max-width: 520px)
+      max-width: 320px
+      height: 320px
 
     .swiper-button-prev, .swiper-button-next
       width: 40px
@@ -45,6 +122,10 @@
       background-color: #EDF0F7
       border-radius: 50%
       transition: background-color 0.3s, ease 0.3s
+
+      @media (min-width: 521px)
+        top: auto
+        bottom: 90px
 
       &:after
         content: ''
@@ -63,15 +144,20 @@
           background-image: url("data:image/svg+xml,%3Csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.37462 8.00001L7.87711 11.5859C8.26301 11.981 8.25556 12.6141 7.86047 13C7.46538 13.3859 6.83226 13.3785 6.44636 12.9834L0.943387 7.34938C0.753638 7.15511 0.753638 6.84491 0.943387 6.65064L6.44636 1.01665C6.83226 0.621554 7.46538 0.614106 7.86047 1.00001C8.25556 1.38591 8.26301 2.01903 7.87711 2.41412L4.37462 6.00001H19C19.5523 6.00001 20 6.44772 20 7.00001C20 7.55229 19.5523 8.00001 19 8.00001H4.37462Z' fill='%23fff'/%3E%3C/svg%3E%0A")
 
     .swiper-button-prev
-      top: auto
-      bottom: 90px
       left: 120px
 
+      @media (max-width: 639px)
+        left: 20px
+
+      @media (max-width: 520px)
+        left: 0
+
     .swiper-button-next
-      top: auto
-      bottom: 90px
       right: 20px
       transform: rotate(180deg)
+
+      @media (max-width: 520px)
+        right: 0
 
     .swiper-pagination
       display: flex
@@ -79,6 +165,12 @@
       justify-content: center
       margin-left: 50px
       bottom: 40px
+
+      @media (max-width: 639px)
+        margin-left: 0
+
+      @media (max-width: 520px)
+        bottom: 20px
 
     .swiper-pagination-bullet
       width: 10px
@@ -122,6 +214,15 @@
     position: relative
     z-index: 6
 
+    @media (max-width: 639px)
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -10%)
+
+    @media (max-width: 520px)
+      display: none
+
   &__date
     color: #fff
     flex: 0 0 143px
@@ -138,6 +239,12 @@
     position: relative
     z-index: 1
 
+    @media (max-width: 639px)
+      flex: 0 0 100px
+      width: 100px
+      max-width: 100px
+      height: 100px
+
     strong
       font-size: 66px
       font-family: $fonts.headings
@@ -146,6 +253,9 @@
       opacity: 0
       transform: translateY(-100px)
       transition: opacity 0.3s, transform 0.8s, ease 0.5s
+
+      @media (max-width: 639px)
+        font-size: 36px
 
     span
       font-size: 26px
@@ -156,6 +266,9 @@
       opacity: 0
       transition: opacity 0.3s, transform 0.8s, ease 0.5s
       transform: translateY(100px)
+
+      @media (max-width: 639px)
+        font-size: 20px
 
   &__price
     font-size: 20px
@@ -177,6 +290,14 @@
     z-index: 2
     margin-left: -25px
 
+    @media (max-width: 639px)
+      font-size: 14px
+      flex: 0 0 80px
+      width: 80px
+      max-width: 80px
+      height: 80px
+      margin-left: -15px
+
     span
       opacity: 0
       transform: scale(0.05)
@@ -189,6 +310,12 @@
     height: 470px
     border-radius: 50%
     overflow: hidden
+
+    @media (max-width: 520px)
+      flex: 0 0 320px
+      width: 320px
+      max-width: 320px
+      height: 320px
 
   &__img
     height: 75%
@@ -213,6 +340,9 @@
       background-color: #FFFFFF
       z-index: 1
 
+      @media (max-width: 520px)
+        top: 200px
+
   &__text
     font-size: 26px
     color: #2E3035
@@ -229,3 +359,11 @@
     opacity: 0
     transform: translate(-50%, 50px)
     transition: opacity 0.3s, transform 1s, ease 0.3s
+
+    @media (max-width: 639px)
+      margin-left: 0
+
+    @media (max-width: 520px)
+      font-size: 16px
+      width: 200px
+      bottom: 60px
