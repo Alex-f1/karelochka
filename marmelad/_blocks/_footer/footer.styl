@@ -1,2 +1,315 @@
 .footer
-  flex none
+  color: #fff
+  flex: none
+  background-color: #2E3035
+  padding-top: 65px
+
+  .logo
+    max-width: 214px
+    width: 100%
+    margin-right: auto
+    margin-left: auto
+    margin-bottom: 50px
+
+  &__inner
+    position: relative
+
+  &__button-go-to-top
+    position: absolute
+    top: -100px
+    right: 0
+
+    @media (max-width: 1279px)
+      right: 20px
+
+    @media (max-width: 959px)
+      right: 50%
+      transform: translateX(50%)
+
+    &.button-default
+      font-size: 12px
+      font-family: $fonts.headings
+      letter-spacing: 1.76px
+      border-radius: 50%
+      padding: 12px
+      min-width: 72px
+      width: 72px
+      height: 72px
+      display: flex
+      flex-direction: column
+      align-items: center
+
+      &:before
+        content: ''
+        width: 12px
+        height: 20px
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.21738 1.84473L1.65216 7.70519M6.21738 1.84473L10.7826 7.70519M6.21738 1.84473L6.21738 19.8447' stroke='%23EDF0F7' stroke-width='2'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-size: contain
+        margin-bottom: 8px
+
+  &__title
+    font-size: 48px
+    color: #FFF
+    font-family: $fonts.headings
+    font-weight: 400
+    line-height: 1.1
+    top: 0
+    margin-bottom: 50px
+
+    @media (max-width: 767px)
+      font-size: 30px
+      margin-bottom: 25px
+
+  &__contacts
+    display: flex
+    margin-left: -30px
+    margin-bottom: 95px
+
+    @media (max-width: 1279px)
+      margin-bottom: 40px
+
+    @media (max-width: 959px)
+      display: block
+
+  &__contacts-col
+    width: 33.333%
+    padding-left: 30px
+
+    @media (max-width: 959px)
+      width: 100%
+      margin-bottom: 15px
+
+  &__contact-name
+    font-size: 14px
+    color: rgba(255, 255, 255, 0.5)
+    font-weight: 500
+    line-height: 1.1
+    margin-bottom: 8px
+
+  &__contact-item
+    font-size: 20px
+    color: #FFF
+    font-weight: 500
+    line-height: 1.1
+    margin-bottom: 10px
+
+    @media (max-width: 767px)
+      font-size: 16px
+
+  &__all-contacts
+    font-size: 16px
+    color: #FFF
+    font-weight: 500
+    line-height: 1.1
+    text-decoration: none
+    background-color: rgba(255, 255, 255, 0.1)
+    border-radius: 20px
+    padding: 10px 16px
+    display: inline-block
+    vertical-align: top
+    margin-top: 72px
+    transition: background-color 0.3s
+
+    @media (max-width: 1279px)
+      margin-top: 50px
+
+    @media (max-width: 959px)
+      margin-top: 15px
+
+    &:hover
+      background-color: #FF0B37
+
+  &__phone, &__email
+    font-size: 20px
+    color: #FFF
+    font-weight: 500
+    line-height: 1.1
+    text-decoration: none
+
+    @media (max-width: 767px)
+      font-size: 16px
+
+  &__socials
+    display: flex
+    align-items: center
+
+  &__social
+    text-decoration: none
+    flex: 0 0 40px
+    width: 40px
+    max-width: 40px
+    height: 40px
+    border-radius: 50%
+    background-color: #2E3035
+    display: flex !important
+    justify-content: center
+    align-items: center
+    margin-left: 10px
+
+    &--viber
+      background-color: #791FA4
+
+    &--whatsapp
+      background-color: #1BA239
+
+  &__form-subscribe
+    margin-top: 50px
+
+    @media (max-width: 959px)
+      max-width: 320px
+
+  &__form-subscribe-field
+    position: relative
+
+    input
+      font-size: 16px
+      font-weight: 500
+      line-height: 1
+      color: #2E3035
+      width: 100%
+      height: 48px
+      padding-right: 60px
+      padding-left: 22px
+      border: none
+      background-color: #EDF0F7
+      border-radius: 48px
+
+    ::placeholder
+      font-size: 16px
+      font-weight: 500
+      line-height: 1
+      color: #7A808E
+
+  &__button-subscribe
+    &.button-default
+      position: absolute
+      top: 4px
+      right: 4px
+      min-width: 40px
+      width: 40px
+      height: 40px
+      border-radius: 50%
+      padding: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.6254 8.167L12.1229 11.7529C11.737 12.148 11.7445 12.7811 12.1396 13.167C12.5346 13.5529 13.1678 13.5455 13.5537 13.1504L19.0566 7.51637C19.2464 7.3221 19.2464 7.0119 19.0566 6.81763L13.5537 1.18364C13.1678 0.788546 12.5346 0.781097 12.1396 1.167C11.7445 1.5529 11.737 2.18602 12.1229 2.58112L15.6254 6.167L1.00002 6.167C0.447738 6.167 2.18987e-05 6.61471 2.18098e-05 7.167C2.17209e-05 7.71928 0.447737 8.167 1.00002 8.167L15.6254 8.167Z' fill='white'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-size: 20px 14px
+
+  &__menu
+    margin-bottom: 95px
+
+    @media (max-width: 1279px)
+      margin-bottom: 50px
+
+  &__nav
+    display: flex
+    margin-left: -30px
+
+    @media (max-width: 959px)
+      display: block
+
+    ul
+      width: 33.333%
+      list-style: none
+      padding-left: 30px
+      margin: 0
+
+      @media (max-width: 959px)
+        width: 100%
+
+      &:last-child
+        @media (min-width: 1440px)
+          width: 40%
+          margin-right: -70px
+
+      li
+        margin-bottom: 15px
+
+        @media (max-width: 959px)
+          margin-bottom: 5px
+
+        a
+          font-size: 14px
+          color: rgba(255, 255, 255, 0.5)
+          font-weight: 500
+          line-height: 1.1
+          text-decoration: none
+          margin-bottom: 8px
+          display: inline-block
+          vertical-align: top
+
+          &:hover
+            color: #fff
+
+  &__menu-tour
+    margin-bottom: 65px
+
+    @media (max-width: 1279px)
+      margin-bottom: 30px
+
+    ul
+      width: 100% !important
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+
+      li
+        width: 15%
+        margin-bottom: 8px
+
+        @media (max-width: 959px)
+          width: 25%
+
+        @media (max-width: 768px)
+          width: 33.333%
+
+        @media (max-width: 639px)
+          width: 50%
+
+        @media (max-width: 479px)
+          width: 100%
+
+  &__menu-name
+    font-size: 14px
+    color: #fff
+    font-weight: 500
+    line-height: 1.1
+    margin-bottom: 8px
+
+  &__info
+    font-size: 14px
+    color: rgba(255, 255, 255, 0.5)
+    font-weight: 500
+    line-height: 1.1
+    text-decoration: none
+    padding-top: 65px
+    padding-bottom: 50px
+    background-color: #1B1C20
+
+    @media (max-width: 1279px)
+      padding-top: 30px
+      padding-bottom: 15px
+
+    & ^[0]
+      &__inner
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+
+    a
+      font-size: 14px
+      color: rgba(255, 255, 255, 0.5)
+      font-weight: 500
+      line-height: 1.1
+      text-decoration: none
+      margin-right: 30px
+      margin-bottom: 15px
+
+      &:hover
+        color: #fff
+
+  &__copy
+    margin-right: 30px
+    margin-bottom: 15px
