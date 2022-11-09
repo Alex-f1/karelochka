@@ -1,0 +1,85 @@
+= yaml =
+pageTitle: Главная
+bodyClasses:
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+= yaml =
+
+{% extends 'app.html' %}
+
+{% block main %}
+
+  <div block="first-screen">
+    <div elem="section" style="background-image: url('img/first-screen-img.jpg');">
+      <div elem="inner" class="contain">
+        <div elem="content">
+          <h1>Каталог туров в Карелию</h1>
+          <div block="choose-tour" mods="catalog">
+            <div elem="section">
+              <div elem="title">Выбрать тур в Карелию</div>
+              <form elem="form">
+                <div elem="fields">
+                  <div elem="field">
+                    <select>
+                      <option value="">Тип тура</option>
+                      <option value="">Тип тура 2</option>
+                      <option value="">Тип тура 3</option>
+                      <option value="">Тип тура 4</option>
+                    </select>
+                  </div>
+                  <div elem="field" mods="date">
+                    <input type="text" class="js-choice-date" readonly placeholder="Даты">
+                  </div>
+                  <div elem="field">
+                    <select>
+                      <option value="">Продолжительность</option>
+                      <option value="">Продолжительность 2</option>
+                      <option value="">Продолжительность 3</option>
+                      <option value="">Продолжительность 4</option>
+                    </select>
+                  </div>
+                  <div elem="field" mods="adult">
+                    <i elem="adult-icon">
+                      <small>1</small>
+                    </i>
+                    <select>
+                      <option value="">1 взрослый</option>
+                      <option value="">2 взрослых</option>
+                      <option value="">3 взрослых</option>
+                      <option value="">4 взрослых</option>
+                    </select>
+                  </div>
+                  <button elem="button-submit" class="button-default" type="submit">
+                    <span>Подобрать тур</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div><!-- choose-tour -->
+          <div elem="sorting-panel">
+            <div block="sorting-tours">
+              <div elem="items">
+                <a elem="item" href="#">Лучшие</a>
+                <a elem="item" href="#">Активные</a>
+                <a elem="item" href="#">На неделю</a>
+                <a elem="item" href="#">Однодневные</a>
+              </div>
+            </div><!-- sorting-tours -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- first-screen -->
+
+  {% include "catalog-tours.html" %}
+
+	{% include "tours-destinations.html" %}
+
+	{% include "articles-content.html" %}
+	
+	{% include "callback-form.html" %}
+
+{% endblock %}

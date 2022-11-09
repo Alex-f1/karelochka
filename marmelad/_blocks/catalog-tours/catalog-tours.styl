@@ -1,0 +1,129 @@
+.catalog-tours
+  padding-top: 65px
+  padding-bottom: 65px
+  overflow: hidden
+
+  &__sorting-panel
+    margin-bottom: 50px
+
+    .sorting-tours
+      display: flex
+      align-items: center
+
+      @media (max-width: 639px)
+        display: block
+
+      &__title
+        font-size: 20px
+        color: #2E3035
+        font-weight: 500
+        line-height: 1.1
+        margin-right: 8px
+        flex: 0 0 auto
+
+        @media (max-width: 639px)
+          margin-bottom: 15px
+
+      &__items
+        overflow-x: auto
+
+        @media (max-width: 959px)
+          margin-right: -50px
+
+      &__item
+        padding-right: 50px
+        position: relative
+
+        &._is-active
+          background-color: #FF0B37
+          color: #fff
+
+          &:before, &:after
+            opacity: 0.5
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.99992 3.37092L7.6819 6.0529C8.07243 6.44343 8.70559 6.44343 9.09612 6.0529C9.48664 5.66238 9.48664 5.02921 9.09612 4.63869L5.35347 0.896046C5.15821 0.700784 4.84163 0.700784 4.64637 0.896046L0.903724 4.63869C0.513199 5.02921 0.513199 5.66238 0.903723 6.0529C1.29425 6.44343 1.92741 6.44343 2.31794 6.0529L4.99992 3.37092Z' fill='white'/%3E%3C/svg%3E%0A")
+
+          &._is-sort-descending
+            &:before
+              opacity: 1
+
+          &._is-sort-ascending
+            &:after
+              opacity: 1
+
+        &:before, &:after
+          content: ''
+          position: absolute
+          right: 20px
+          width: 10px
+          height: 7px
+          background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.99992 3.37092L7.6819 6.0529C8.07243 6.44343 8.70559 6.44343 9.09612 6.0529C9.48664 5.66238 9.48664 5.02921 9.09612 4.63869L5.35347 0.896046C5.15821 0.700784 4.84163 0.700784 4.64637 0.896046L0.903724 4.63869C0.513199 5.02921 0.513199 5.66238 0.903723 6.0529C1.29425 6.44343 1.92741 6.44343 2.31794 6.0529L4.99992 3.37092Z' fill='%237A808E'/%3E%3C/svg%3E%0A")
+          background-repeat: no-repeat
+          background-position: 0 0
+          background-size: contain
+          transition: opacity 0.3s, background 0.3s, ease 0.3s
+
+        &:before
+          top: 10px
+
+        &:after
+          bottom: 10px
+          transform: rotate(180deg)
+
+        &:hover
+          &:before, &:after
+            opacity: 0.5
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.99992 3.37092L7.6819 6.0529C8.07243 6.44343 8.70559 6.44343 9.09612 6.0529C9.48664 5.66238 9.48664 5.02921 9.09612 4.63869L5.35347 0.896046C5.15821 0.700784 4.84163 0.700784 4.64637 0.896046L0.903724 4.63869C0.513199 5.02921 0.513199 5.66238 0.903723 6.0529C1.29425 6.44343 1.92741 6.44343 2.31794 6.0529L4.99992 3.37092Z' fill='white'/%3E%3C/svg%3E%0A")
+
+  &__items
+    display: flex
+    flex-wrap: wrap
+    margin-left: -16px
+
+  &__item
+    width: 25%
+    margin-bottom: 38px
+    display: flex
+
+    @media (max-width: 1279px)
+      width: 33.333%
+
+    @media (max-width: 1024px)
+      padding-left: 16px
+
+    @media (max-width: 959px)
+      width: 50%
+
+    @media (max-width: 767px)
+      width: 100%
+
+    .tour-thumb
+      min-height: 600px
+
+  &__bottom
+    margin-top: 20px
+    display: flex
+    align-items: center
+    max-width: 770px
+    width: 100%
+    margin-left: auto
+
+    @media (max-width: 1279px)
+      max-width: 100%
+      align-items: center
+      flex-direction: column
+      margin-left: 0
+
+    span
+      font-size: 16px
+      color: #2E3035
+      font-weight: 500
+      line-height: 1.1
+      margin-left: auto
+
+      @media (max-width: 1279px)
+        order: -1
+        margin-bottom: 15px
+        margin-left: 0
+
+  &__button-show-more
+    width: 340px

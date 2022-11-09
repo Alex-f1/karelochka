@@ -1,7 +1,7 @@
 function initReviewsSlider() {
   var swiper = new Swiper(".js-reviews-slider", {
     slidesPerView: 2,
-    spaceBetween: 30,
+    spaceBetween: 32,
     loop: true,
     speed: 1000,
     pagination: {
@@ -15,7 +15,7 @@ function initReviewsSlider() {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 30,
+        spaceBetween: 32,
       },
       768: {
         slidesPerView: 2,

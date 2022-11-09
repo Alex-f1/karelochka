@@ -119,6 +119,18 @@
       line-height: 1.1
       letter-spacing: 1.76px
 
+  &__share
+    font-size: 16px
+    color: #FFF
+    font-weight: 500
+    line-height: 1.1
+    position: absolute
+    top: -220px
+    right: 25px
+    padding: 11px 16px
+    background-color: #FF0B37
+    border-radius: 20px
+
   &__name
     font-size: 20px
     color: #2E3035
@@ -150,9 +162,96 @@
       background-color: #FF0B37
       border-radius: 50%
 
+  &__desc
+    font-size: 14px
+    color: #333
+    font-weight: 500
+    line-height: 1.1
+    margin-bottom: 16px
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: 5
+    -webkit-box-orient: vertical
+    white-space: normal
+    height: 76px
+    overflow: hidden
+
+  &__upcoming-dates
+    margin-bottom: 15px
+    background: #EDF0F7
+    border-radius: 8px
+    overflow: hidden
+    padding: 8px 8px 0 8px
+    margin-left: -10px
+    margin-right: -5px
+    cursor: pointer
+
+    &._is-active
+      & ^[0]
+        &__upcoming-dates-name
+          &:after
+            transform: rotate(180deg)
+
+  &__upcoming-dates-name
+    font-size: 16px
+    color: #333
+    font-weight: 500
+    line-height: 1.1
+    position: relative
+    margin-bottom: 8px
+
+    &:after
+      content: ''
+      position: absolute
+      top: 8px
+      right: 2px
+      width: 10px
+      height: 7px
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.0962 0.951904L5.00001 5.0481L0.903809 0.951904' stroke='%234F4F4F' stroke-width='2'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+      transition: transform 0.3s, ease 0.3s
+
+  &__upcoming-dates-item
+    display: flex
+    align-items: center
+    margin-bottom: 8px
+
+  &__upcoming-date
+    font-size: 14px
+    color: #333
+    font-weight: 500
+    line-height: 1
+    margin-right: 8px
+
+    &:last-child
+      margin-right: 0
+
+  &__upcoming-dates-sep
+    flex: 0 0 4px
+    width: 4px
+    max-width: 4
+    height: 14px
+    border-radius: 5px
+    margin-right: 3px
+
+    &--start
+      background-color: #27AE60
+
+    &--middle
+      background-color: #F2C94C
+
+    &--final
+      background-color: #EB5757
+
+  &__upcoming-dates-other
+    display: none
+
   &__more
     display: flex
     align-items: center
+    min-height: 40px
 
   &__more-link
     flex: 0 0 0%
@@ -203,3 +302,26 @@
     color: #FF0B37
     font-weight: 500
     line-height: 1.1
+
+  &__count-comments
+    font-size: 14px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1.1
+    display: flex
+    align-items: center
+    background-color: #EDF0F7
+    border-radius: 16px
+    padding: 10px 12px
+    margin-left: auto
+
+    &:before
+      content: ''
+      flex: 0 0 14px
+      width: 14px
+      max-width: 14px
+      height: 15px
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='15' viewBox='0 0 14 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0H2C0.895431 0 0 0.895431 0 2V9C0 10.1046 0.895431 11 2 11H3V15L6.41421 11.5858C6.78929 11.2107 7.29799 11 7.82843 11H12C13.1046 11 14 10.1046 14 9V2C14 0.895431 13.1046 0 12 0Z' fill='%232E3035'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain

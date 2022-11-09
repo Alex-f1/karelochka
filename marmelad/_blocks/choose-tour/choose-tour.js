@@ -104,6 +104,13 @@ function initCustomSelect() {
     minimumResultsForSearch: -1,
     width: '100%',
   });
+
+  new AirDatepicker('.js-choice-date', {
+    autoClose: true,
+    position: 'bottom left',
+    range: true,
+  });
+  
 }
 
 initCustomSelect();
