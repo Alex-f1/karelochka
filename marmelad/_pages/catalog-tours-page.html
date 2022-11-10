@@ -1,12 +1,16 @@
 = yaml =
-pageTitle: Главная
+pageTitle: Каталог туров в Карелию
 bodyClasses:
 layout: !!map
   header: true
   footer: true
   left: false
   right: false
+path: [
+  {"title": Главная},
+]
 = yaml =
+
 
 {% extends 'app.html' %}
 
@@ -16,6 +20,7 @@ layout: !!map
     <div elem="section" style="background-image: url('img/first-screen-img.jpg');">
       <div elem="inner" class="contain">
         <div elem="content">
+          {% include "bread-crumbs.html" %}
           <h1>Каталог туров в Карелию</h1>
           <div block="choose-tour" mods="catalog">
             <div elem="section">
