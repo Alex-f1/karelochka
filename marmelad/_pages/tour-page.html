@@ -1,0 +1,33 @@
+= yaml =
+pageTitle: Каталог туров
+bodyClasses:
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+path: [
+  {"title": Главная},
+]
+= yaml =
+
+
+{% extends 'app.html' %}
+
+{% block main %}
+
+  <div block="first-screen">
+    <div elem="section" style="background-image: url('img/first-screen-img2.jpg');">
+      <div elem="inner" class="contain">
+        <div elem="content">
+          {% include "bread-crumbs.html" %}
+        </div>
+      </div>
+    </div>
+  </div><!-- first-screen -->
+
+  {% include "card-tour.html" %}
+	
+	{% include "callback-form.html" %}
+
+{% endblock %}
