@@ -13,7 +13,7 @@ function fixedExtraMenu() {
     links = $('.sidebar-info .scroll-to');
   $('.on-anchor').each(function () {
     positions.push({
-      top: $(this).position().top + 130,
+      top: $(this).position().top + 50,
       a: links.filter('[href="#' + $(this).attr('id') + '"]')
     });
   });

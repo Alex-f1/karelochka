@@ -6,6 +6,9 @@
     margin-bottom: 32px
     padding-left: 16px
 
+    @media (max-width: 959px)
+      margin-bottom: 16px
+
     .swiper-button-prev, .swiper-button-next
       width: 40px
       height: 40px
@@ -35,8 +38,12 @@
       left: 0
 
     .swiper-button-next
-      right: 325px
+      right: auto
+      left: 795px
       transform: rotate(180deg)
+
+      @media (max-width: 959px)
+        left: 585px
 
       @media (max-width: 520px)
         right: 0
@@ -44,6 +51,10 @@
   &__item
     width: 384px
     height: 384px
+
+    @media (max-width: 959px)
+      width: 280px
+      height: 280px
 
     &.swiper-slide-next + .swiper-slide
       & ^[0]
