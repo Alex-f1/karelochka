@@ -244,12 +244,14 @@
           transition: margin-left 0.3s, ease 0.3s
 
           &:hover
-            color: #000
-            margin-left: 0
 
-            &:before
-              opacity: 1
-              visibility: visible
+            @media (min-width: 1025px)
+              color: #000
+              margin-left: 0
+
+              &:before
+                opacity: 1
+                visibility: visible
 
           &:before
             content: ''
