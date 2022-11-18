@@ -1,0 +1,170 @@
+.article-tour-thumb
+  &__body
+    width: 100%
+    display: flex
+
+    @media (max-width: 639px)
+      flex-direction: column
+
+  &__img
+    flex: 0 0 280px
+    width: 280px
+    max-width: 280px
+    height: 190px
+    border-radius: 8px
+    margin-top: 32px
+    margin-left: 32px
+    overflow: hidden
+    position: relative
+    order: 1
+
+    @media (max-width: 639px)
+      flex: none
+      width: 100%
+      max-width: 100%
+      height: 220px
+      margin-left: 0
+      margin-top: 0
+      margin-bottom: 16px
+      order: -1
+
+    + .article-tour-thumb__content
+      p
+        -webkit-line-clamp: 4
+        height: 88px
+
+        @media (max-width: 767px)
+          height: 72px
+
+    &:hover
+      img
+        transform: scale(1.3)
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(0deg, rgba(46, 48, 53, 0.2), rgba(46, 48, 53, 0.2))
+
+    img
+      width: 100%
+      height: 100%
+      vertical-align: top
+      object-fit: cover
+      transition: transform 1s, ease 1s
+
+  &__content
+    display: flex
+    flex-direction: column
+
+  &__info
+    display: flex
+    align-items: center
+    margin-bottom: 8px
+
+  &__date
+    display: flex
+    align-items: center
+    margin-right: 30px
+
+    &:before
+      content: ''
+      flex: 0 0 24px
+      width: 24px
+      max-width: 24px
+      height: 24px
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 4.5C3 3.67157 3.67157 3 4.5 3H19.5C20.3284 3 21 3.67157 21 4.5V19.5C21 20.3284 20.3284 21 19.5 21H4.5C3.67157 21 3 20.3284 3 19.5V4.5ZM5.5 9C5.22386 9 5 9.22386 5 9.5V18.5C5 18.7761 5.22386 19 5.5 19H18.5C18.7761 19 19 18.7761 19 18.5V9.5C19 9.22386 18.7761 9 18.5 9H5.5Z' fill='%237A808E'/%3E%3Cpath d='M13 11H11V13H13V11Z' fill='%237A808E'/%3E%3Cpath d='M17 11H15V13H17V11Z' fill='%237A808E'/%3E%3Cpath d='M9 11H7V13H9V11Z' fill='%237A808E'/%3E%3Cpath d='M9 15H7V17H9V15Z' fill='%237A808E'/%3E%3Cpath d='M13 15H11V17H13V15Z' fill='%237A808E'/%3E%3Cpath d='M17 15H15V17H17V15Z' fill='%237A808E'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+      margin-right: 4px
+
+  &__views
+    display: flex
+    align-items: center
+
+    &:before
+      content: ''
+      flex: 0 0 24px
+      width: 24px
+      max-width: 24px
+      height: 24px
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.7893 12.6318C20.5036 14.3536 16.6072 19 12 19C7.39284 19 3.49638 14.3536 2.2107 12.6318C1.92976 12.2556 1.92977 11.7444 2.21071 11.3682C3.49638 9.64644 7.39284 5 12 5C16.6072 5 20.5036 9.64645 21.7893 11.3682C22.0702 11.7444 22.0702 12.2556 21.7893 12.6318ZM12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z' fill='%237A808E'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 12.9998C11.8808 12.9998 13 11.8805 13 10.4998C13 9.93459 13.4896 9.33468 13.9232 9.69723C14.5814 10.2475 15 11.0748 15 11.9998C15 13.6567 13.6569 14.9998 12 14.9998C11.075 14.9998 10.2478 14.5811 9.69747 13.923C9.33492 13.4894 9.93483 12.9998 10.5 12.9998Z' fill='%237A808E'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+      margin-right: 4px
+
+  &__name
+    font-size: 36px
+    color: #000
+    font-family: $fonts.headings
+    font-weight: 400
+    line-height: 1.1
+    text-decoration: none
+    margin-bottom: 24px
+    transition: color 0.3s, ease 0.3s
+
+    @media (max-width: 959px)
+      font-size: 28px
+
+    @media (max-width: 767px)
+      font-size: 20px
+      margin-bottom: 16px
+
+    &:hover
+      color: #FF0B37
+
+  &__text
+    margin-bottom: 24px
+
+    p
+      font-size: 20px
+      color: #2E3035
+      font-weight: 500
+      line-height: 1.1
+      display: flex
+      text-overflow: ellipsis
+      margin-top: 0
+      margin-bottom: 0
+      display: -webkit-box
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
+      white-space: normal
+      height: 68px
+      overflow: hidden
+
+      @media (max-width: 767px)
+        height: 52px
+        font-size: 16px
+
+  &__button-more
+    display: flex
+    align-items: center
+    align-self: flex-start
+    min-width: 147px
+    padding-top: 10px
+    padding-bottom: 10px
+
+    @media (max-width: 413px)
+      width: 100%
+      justify-content: center
+
+    &:after
+      content: ''
+      flex: 0 0 13px
+      width: 13px
+      max-width: 13px
+      height: 20px
+      background-image: url("data:image/svg+xml,%3Csvg width='13' height='20' viewBox='0 0 13 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.30102 15.9267L1.71513 12.4243C1.32004 12.0383 0.686919 12.0458 0.301016 12.4409C-0.0848875 12.836 -0.0774393 13.4691 0.317652 13.855L5.95165 19.358C6.14591 19.5477 6.45612 19.5477 6.65039 19.358L12.2844 13.855C12.6795 13.4691 12.6869 12.836 12.301 12.4409C11.9151 12.0458 11.282 12.0383 10.8869 12.4243L7.30102 15.9267L7.30102 1.30135C7.30102 0.749069 6.8533 0.301353 6.30102 0.301353C5.74873 0.301353 5.30102 0.749069 5.30102 1.30135L5.30102 15.9267Z' fill='white'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      margin-left: 14px
+      transition: transform 0.3s, ease 0.3s
+
+    &:hover
+      &:after
+        transform: rotate(-90deg)

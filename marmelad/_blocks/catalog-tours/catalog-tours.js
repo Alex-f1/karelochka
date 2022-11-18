@@ -27,6 +27,6 @@ $('.js-upcoming-dates').on('click', function () {
   $(this).find('.js-upcoming-dates-other').slideToggle();
 });
 
-if ($('.catalog-tours')) {
+if ($('.sorting-tours').length) {
   sortingTours();
 }

@@ -1,0 +1,128 @@
+.articles-tours
+  padding-top: 65px
+  padding-bottom: 65px
+
+  &__sorting-panel
+    margin-bottom: 50px
+
+    .sorting-tours
+      display: flex
+      align-items: center
+
+      @media (max-width: 639px)
+        display: block
+
+      &__title
+        font-size: 20px
+        color: #2E3035
+        font-weight: 500
+        line-height: 1.1
+        margin-right: 8px
+        flex: 0 0 auto
+
+        @media (max-width: 639px)
+          margin-bottom: 15px
+
+      &__items
+        overflow-x: auto
+
+        @media (max-width: 959px)
+          margin-right: -50px
+
+      &__item
+        padding-right: 50px
+        position: relative
+
+        &._is-active
+          background-color: #FF0B37
+          color: #fff
+
+          &:before, &:after
+            opacity: 0.5
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.99992 3.37092L7.6819 6.0529C8.07243 6.44343 8.70559 6.44343 9.09612 6.0529C9.48664 5.66238 9.48664 5.02921 9.09612 4.63869L5.35347 0.896046C5.15821 0.700784 4.84163 0.700784 4.64637 0.896046L0.903724 4.63869C0.513199 5.02921 0.513199 5.66238 0.903723 6.0529C1.29425 6.44343 1.92741 6.44343 2.31794 6.0529L4.99992 3.37092Z' fill='white'/%3E%3C/svg%3E%0A")
+
+          &._is-sort-descending
+            &:before
+              opacity: 1
+
+          &._is-sort-ascending
+            &:after
+              opacity: 1
+
+        &:before, &:after
+          content: ''
+          position: absolute
+          right: 20px
+          width: 10px
+          height: 7px
+          background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.99992 3.37092L7.6819 6.0529C8.07243 6.44343 8.70559 6.44343 9.09612 6.0529C9.48664 5.66238 9.48664 5.02921 9.09612 4.63869L5.35347 0.896046C5.15821 0.700784 4.84163 0.700784 4.64637 0.896046L0.903724 4.63869C0.513199 5.02921 0.513199 5.66238 0.903723 6.0529C1.29425 6.44343 1.92741 6.44343 2.31794 6.0529L4.99992 3.37092Z' fill='%237A808E'/%3E%3C/svg%3E%0A")
+          background-repeat: no-repeat
+          background-position: 0 0
+          background-size: contain
+          transition: opacity 0.3s, background 0.3s, ease 0.3s
+
+        &:before
+          top: 10px
+
+        &:after
+          bottom: 10px
+          transform: rotate(180deg)
+
+        &:hover
+          &:before, &:after
+            opacity: 0.5
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.99992 3.37092L7.6819 6.0529C8.07243 6.44343 8.70559 6.44343 9.09612 6.0529C9.48664 5.66238 9.48664 5.02921 9.09612 4.63869L5.35347 0.896046C5.15821 0.700784 4.84163 0.700784 4.64637 0.896046L0.903724 4.63869C0.513199 5.02921 0.513199 5.66238 0.903723 6.0529C1.29425 6.44343 1.92741 6.44343 2.31794 6.0529L4.99992 3.37092Z' fill='white'/%3E%3C/svg%3E%0A")
+
+  &__item
+    margin-bottom: 48px
+
+  &__pagination
+    display: flex
+    align-items: center
+
+    a
+      font-size: 14px
+      color: #000
+      font-weight: 500
+      line-height: 1
+      text-decoration: none
+      display: flex
+      align-items: center
+      justify-content: center
+      flex: 0 0 40px
+      width: 40px
+      max-width: 40px
+      height: 40px
+      border-radius: 50%
+      background-color: #EDF0F7
+      margin-right: 16px
+      transition: color 0.3s, ease 0.3s
+
+      &:last-child
+        margin-right: 0
+
+      &:hover
+        color: #fff
+        background-color: #FF0B37
+
+      &._is-active
+        color: #fff
+        background-color: #7A808E
+        pointer-events: none
+
+  &__prev, &__next
+    span
+      flex: 0 0 20px
+      width: 20px
+      max-width: 20px
+      height: 14px
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.37453 5.99999L7.87702 2.41411C8.26292 2.01902 8.25547 1.38589 7.86038 0.99999C7.46529 0.614087 6.83217 0.621535 6.44627 1.01663L0.943296 6.65062C0.753547 6.84489 0.753546 7.15509 0.943296 7.34936L6.44627 12.9834C6.83217 13.3784 7.46529 13.3859 7.86038 13C8.25547 12.6141 8.26292 11.981 7.87702 11.5859L4.37453 7.99999L18.9999 7.99999C19.5522 7.99999 19.9999 7.55228 19.9999 6.99999C19.9999 6.44771 19.5522 5.99999 18.9999 5.99999L4.37453 5.99999Z' fill='%232E3035'/%3E%3C/svg%3E%0A")
+      transition: background 0.3s, ease 0.3s
+
+    &:hover
+      span
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.37453 5.99999L7.87702 2.41411C8.26292 2.01902 8.25547 1.38589 7.86038 0.99999C7.46529 0.614087 6.83217 0.621535 6.44627 1.01663L0.943296 6.65062C0.753547 6.84489 0.753546 7.15509 0.943296 7.34936L6.44627 12.9834C6.83217 13.3784 7.46529 13.3859 7.86038 13C8.25547 12.6141 8.26292 11.981 7.87702 11.5859L4.37453 7.99999L18.9999 7.99999C19.5522 7.99999 19.9999 7.55228 19.9999 6.99999C19.9999 6.44771 19.5522 5.99999 18.9999 5.99999L4.37453 5.99999Z' fill='%23fff'/%3E%3C/svg%3E%0A")
+
+  &__next
+    span
+      transform: rotate(180deg)
