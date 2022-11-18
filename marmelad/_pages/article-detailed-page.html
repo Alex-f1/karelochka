@@ -1,0 +1,34 @@
+= yaml =
+pageTitle: Статьи
+bodyClasses: article-page
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+path: [
+  {"title": Главная},
+]
+= yaml =
+
+
+{% extends 'app.html' %}
+
+{% block main %}
+
+  <div block="first-screen">
+    <div elem="section" style="background-image: url('img/first-screen-img.jpg');">
+      <div elem="inner" class="contain">
+        <div elem="content">
+          {% include "bread-crumbs.html" %}
+          <h1>Карелочка с любовью о Карелии</h1>
+        </div>
+      </div>
+    </div>
+  </div><!-- first-screen -->
+
+  {% include "article-detailed.html" %}
+	
+	{% include "callback-form.html" %}
+
+{% endblock %}
