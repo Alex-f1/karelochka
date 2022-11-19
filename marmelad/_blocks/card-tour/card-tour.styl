@@ -1112,39 +1112,39 @@
     &:last-child
       margin-right: 0
 
-  &__pagination
+.page-pagination
+  display: flex
+  align-items: center
+
+  a
+    font-size: 14px
+    color: #000
+    font-weight: 500
+    line-height: 1
+    text-decoration: none
     display: flex
     align-items: center
+    justify-content: center
+    flex: 0 0 40px
+    width: 40px
+    max-width: 40px
+    height: 40px
+    border-radius: 50%
+    background-color: #EDF0F7
+    margin-right: 16px
+    transition: color 0.3s, ease 0.3s
 
-    a
-      font-size: 14px
-      color: #000
-      font-weight: 500
-      line-height: 1
-      text-decoration: none
-      display: flex
-      align-items: center
-      justify-content: center
-      flex: 0 0 40px
-      width: 40px
-      max-width: 40px
-      height: 40px
-      border-radius: 50%
-      background-color: #EDF0F7
-      margin-right: 16px
-      transition: color 0.3s, ease 0.3s
+    &:last-child
+      margin-right: 0
 
-      &:last-child
-        margin-right: 0
+    &:hover
+      color: #fff
+      background-color: #FF0B37
 
-      &:hover
-        color: #fff
-        background-color: #FF0B37
-
-      &._is-active
-        color: #fff
-        background-color: #7A808E
-        pointer-events: none
+    &._is-active
+      color: #fff
+      background-color: #7A808E
+      pointer-events: none
 
   &__prev, &__next
     span
