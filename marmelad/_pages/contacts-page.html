@@ -1,6 +1,6 @@
 = yaml =
-pageTitle: Каталог туров
-bodyClasses: tour-page
+pageTitle: Контакты
+bodyClasses:
 layout: !!map
   header: true
   footer: true
@@ -11,23 +11,21 @@ path: [
 ]
 = yaml =
 
-
 {% extends 'app.html' %}
 
 {% block main %}
 
   <div block="first-screen">
-    <div elem="section" style="background-image: url('img/first-screen-img2.jpg');">
+    <div elem="section" style="background-image: url('img/first-screen-img.jpg');">
       <div elem="inner" class="contain">
         <div elem="content">
           {% include "bread-crumbs.html" %}
+          <h1>Контакты</h1>
         </div>
       </div>
     </div>
   </div><!-- first-screen -->
 
-  {% include "card-tour.html" %}
-	
-	{% include "callback-form.html" %}
+  {% include "contacts-info.html" %}
 
 {% endblock %}

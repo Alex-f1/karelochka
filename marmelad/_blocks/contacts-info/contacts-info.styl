@@ -1,0 +1,244 @@
+.contacts-info
+  padding-top: 64px
+  padding-bottom: 64px
+
+  @media (max-width: 1279px)
+    padding-top: 30px
+    padding-bottom: 30px
+
+  &__title
+    font-size: 36px
+    color: #2E3035
+    font-family: $fonts.headings
+    font-weight: 400
+    line-height: 1.2
+    margin-top: 0
+    margin-bottom: 24px
+
+    @media (max-width: 797px)
+      font-size: 26px
+
+  &__content
+    background-color: #F5F7FC
+    border-radius: 16px
+    margin-bottom: 24px
+
+  &__items
+    display: flex
+    flex-wrap: wrap
+
+  &__item
+    width: 50%
+    padding: 32px
+    position: relative
+
+    @media (max-width: 639px)
+      width: 100%
+      padding: 16px
+
+  &__name
+    font-size: 20px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1.1
+    margin-bottom: 16px
+
+  &__phone
+    font-size: 64px
+    color: #2E3035
+    font-family: $fonts.headings
+    font-weight: 400
+    line-height: 1
+    text-decoration: none
+    display: block
+    margin-bottom: 8px
+
+    @media (max-width: 1279px)
+      font-size: 32px
+
+    @media (max-width: 797px)
+      font-size: 26px
+
+  &__socials
+    display: flex
+    align-items: center
+    position: absolute
+    bottom: 50px
+    right: -130px
+    z-index: 2
+
+    @media (max-width: 1279px)
+      bottom: 40px
+
+    @media (max-width: 797px)
+      bottom: 30px
+
+    @media (max-width: 639px)
+      position: static
+
+  &__social
+    text-decoration: none
+    flex: 0 0 40px
+    width: 40px
+    max-width: 40px
+    height: 40px
+    border-radius: 50%
+    background-color: #2E3035
+    display: flex !important
+    justify-content: center
+    align-items: center
+    margin-right: 10px
+
+    &--viber
+      background-color: #791FA4
+
+    &--whatsapp
+      background-color: #1BA239
+
+  &__schedule
+    font-size: 16px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1
+
+    span
+      display: block
+
+  &__email
+    a
+      font-size: 32px
+      color: #0075FF
+      font-family: $fonts.headings
+      font-weight: 400
+      line-height: 1
+      text-decoration: none
+      display: block
+      margin-bottom: 5px
+
+      @media (max-width: 1279px)
+        font-size: 20px
+
+      &:last-child
+        margin-bottom: 0
+
+  &__address
+    font-size: 16px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1.1
+
+  &__form
+    background-color: #F5F7FC
+    border-radius: 16px
+    padding: 32px
+
+    @media (max-width: 639px)
+      padding: 16px
+
+  &__fields
+    max-width: 528px
+    width: 100%
+    position: relative
+
+    @media (max-width: 797px)
+      max-width: 100%
+
+  &__company-details
+    position: absolute
+    width: 135px
+    top: 64px
+    right: -230px
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    text-decoration: none
+
+    @media (max-width: 959px)
+      right: -150px
+
+    @media (max-width: 797px)
+      position: static
+      margin-bottom: 20px
+      margin-right: auto
+      margin-left: auto
+
+    i
+      width: 68px
+      height: 80px
+      margin-bottom: 16px
+
+      @media (max-width: 797px)
+        width: 48px
+        height: 60px
+        margin-bottom: 8px
+
+      svg
+        max-width: 100%
+        height: auto
+
+    span
+      font-size: 14px
+      color: #000
+      font-weight: 500
+      line-height: 1
+
+  &__field
+    margin-bottom: 16px
+
+    span
+      font-size: 16px
+      color: #2E3035
+      font-weight: 500
+      line-height: 1
+
+      span
+        color: #ff0b37
+
+  &__input
+    input
+      font-size: 16px
+      color: #7A808E
+      font-weight: 500
+      line-height: 1
+      width: 100%
+      background-color: #FFFFFF
+      border: 2px solid #EDF0F7
+      border-radius: 6px
+      height: 48px
+      padding: 14px 16px
+
+  &__textarea
+    textarea
+      font-size: 16px
+      color: #7A808E
+      font-weight: 500
+      line-height: 1
+      width: 100%
+      max-width: 100%
+      background-color: #FFFFFF
+      border: 2px solid #EDF0F7
+      border-radius: 6px
+      min-height: 146px
+      padding: 14px 16px
+
+  &__button-send
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 220px
+
+    @media (max-width: 767px)
+      width: 100%
+
+    &:before
+      content: ''
+      flex: 0 0 18px
+      width: 18px
+      max-width: 18px
+      height: 18px
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.70921 0.854607L17.1056 8.55279C17.4741 8.73705 17.4741 9.26295 17.1056 9.44721L1.70922 17.1454C1.12597 17.437 0.495893 16.8429 0.752765 16.2435L3 11L8.43079 9.18974C8.61313 9.12896 8.61313 8.87104 8.43079 8.81026L3 7L0.752764 1.75645C0.495892 1.15708 1.12596 0.562982 1.70921 0.854607Z' fill='white'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+      margin-right: 10px

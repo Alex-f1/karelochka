@@ -1,5 +1,6 @@
-<footer block="footer">
+<footer block="footer" {% if pageTitle == "Контакты" %}mods="no-content"{% endif %}>
   <div elem="section">
+    {% if pageTitle != "Контакты" %}
     <div elem="inner" class="contain">
       <a elem="button-go-to-top" class="button-default" href="#">
         <span>вверх</span>
@@ -154,6 +155,7 @@
         </nav>
       </div>
     </div>
+    {% endif %}
     <div elem="info">
       <div elem="inner" class="contain">
         <div elem="copy">&copy; 2013-2022 ООО Туристическая Компания "Карелочка"</div>
