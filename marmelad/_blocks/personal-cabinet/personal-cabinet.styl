@@ -1,0 +1,467 @@
+.personal-cabinet
+  padding-bottom: 64px
+
+  .bread-crumbs
+    color: #7A808E
+
+    a, &__separator
+      color: #7A808E
+
+  &__tabs-panel
+    padding-top: 4px
+    background-color: #EDF0F7
+
+  &__tabs
+    display: flex
+
+  &__button-tab
+    font-size: 16px
+    color: #0075FF
+    font-weight: 500
+    line-height: 1
+    text-align: center
+    padding: 16px
+    text-decoration: none
+    margin-right: 8px
+    transition: color 0.3s, background-color 0.3s
+
+    &._is-active
+      color: #000
+      background-color: #FFF
+      border-radius: 8px 8px 0px 0px
+
+    &:hover
+      color: #000
+
+  &__sorting-panel
+    margin-bottom: 50px
+
+    .sorting-tours
+      display: flex
+      align-items: center
+
+      @media (max-width: 639px)
+        display: block
+
+      &__title
+        font-size: 20px
+        color: #2E3035
+        font-weight: 500
+        line-height: 1.1
+        margin-right: 8px
+        flex: 0 0 auto
+
+        @media (max-width: 639px)
+          margin-bottom: 15px
+
+  &__head
+    margin-top: 24px
+    margin-bottom: 24px
+
+  &__title
+    font-size: 38px
+    color: #333
+    font-family: $fonts.headings
+    font-style: normal
+    font-weight: 400
+    line-height: 1.2
+    margin-top: 0
+    margin-bottom: 16px
+
+    @media (max-width: 767px)
+      font-size: 30px
+
+  &__item
+    background-color: #F5F7FC
+    border-radius: 16px
+    overflow: hidden
+    padding: 32px
+    margin-bottom: 24px
+    position: relative
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 4px
+      height: 100%
+      background-color: #FF0B37
+      display: none
+
+    &:last-child
+      margin-bottom: 0
+
+    &--not-pay
+      &:before
+        display: block
+
+      & ^[0]
+        &__number
+          &:before
+            display: block
+
+        &__not-pay
+          display: block
+
+        &__payment
+          > span
+            display: none
+
+        &__not-full-price
+          color: #ff0b37 !important
+
+  &__body
+    display: flex
+    align-items: center
+    padding-right: 72px
+    width: 100%
+    position: relative
+
+  &__number
+    font-size: 14px
+    color: #7A808E
+    font-weight: 500
+    line-height: 1
+    text-align: center
+    margin-right: 24px
+    width: 24px
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 24px
+      height: 24px
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8963 3.5C12.498 2.83333 11.502 2.83333 11.1037 3.5L2.14021 18.5C1.74183 19.1667 2.2398 20 3.03655 20H20.9634C21.7602 20 22.2582 19.1667 21.8598 18.5L12.8963 3.5ZM10.5 8H13.5L13 15H11L10.5 8ZM13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z' fill='%23FF0B37'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+      display: none
+
+  &__info
+    width: 100%
+    display: flex
+    align-items: center
+
+  &__col
+    width: 50%
+    margin-right: 32px
+
+    &:last-child
+      margin-right: 0
+
+  &__info-head
+    display: flex
+    align-items: center
+    width: 100%
+    margin-bottom: 10px
+
+  &__name
+    font-size: 20px
+    color: #2E3035
+    font-weight: 500
+    line-height: 1.1
+    text-decoration: none
+    transition: color 0.3s
+
+    &:hover
+      color: #ff0b37
+
+  &__not-pay
+    font-size: 20px
+    color: #ff0b37
+    font-weight: 500
+    line-height: 1.1
+    margin-left: 40px
+    display: none
+
+  &__price
+    margin-left: auto
+
+    span
+      font-size: 20px
+      color: #828282
+      font-weight: 500
+      line-height: 1.1
+
+  &__not-full-price
+    color: #000 !important
+
+  &__info-tour
+    display: flex
+    align-items: center
+
+  &__dates
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    color: #7A808E
+    display: flex
+    align-items: center
+
+    span
+      margin-right: 24px
+      margin-left: 24px
+
+  &__date
+    margin-right: 4px
+
+  &__day
+    padding: 8px 12px
+    background-color: #fff
+    border-radius: 16px
+    transition: background-color 0.3s, ease 0.3s
+
+    &--weekend
+      color: #FF0B37
+
+  &__day-hours
+    margin-left: 24px
+
+  &__room
+    display: flex
+    align-items: center
+    margin-left: 40px
+
+    span
+      font-size: 14px
+      color: #000
+      font-weight: 500
+      line-height: 1
+      margin-left: 0
+      margin-right: 0
+
+  &__adult-icon
+    display: flex
+    align-items: center
+    position: relative
+    z-index: 2
+    margin-right: 4px
+
+    &:before
+      content: ''
+      flex: 0 0 9px
+      width: 9px
+      max-width: 9px
+      height: 26px
+      background-image: url("data:image/svg+xml,%3Csvg width='9' height='26' viewBox='0 0 9 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15.4028V10.9749C0 9.7104 0.502331 8.49767 1.39649 7.60351L1.58606 7.41394C1.82172 7.17828 2.19688 7.1575 2.45712 7.36569C3.65146 8.32117 5.34854 8.32117 6.54288 7.36569C6.80312 7.1575 7.17828 7.17828 7.41394 7.41394L7.60351 7.60351C8.49767 8.49767 9 9.7104 9 10.9749V15.4028C9 16.3817 8.44695 17.2765 7.57143 17.7143C7.22122 17.8894 7 18.2473 7 18.6389V25C7 25.5523 6.55228 26 6 26H3C2.44772 26 2 25.5523 2 25V18.6389C2 18.2473 1.77878 17.8894 1.42857 17.7143C0.553048 17.2765 0 16.3817 0 15.4028Z' fill='black'/%3E%3Ccircle cx='4.5' cy='3.5' r='3.5' fill='black'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+
+    small
+      font-size: 10px
+      font-style: normal
+      color: #000
+      font-weight: 700
+      line-height: 1
+      align-self: flex-end
+      transform: translateY(2px)
+      margin-left: 4px
+
+  &__confirmed
+    margin-right: 32px
+
+    span
+      font-size: 14px
+      color: #000
+      font-weight: 500
+      line-height: 1
+      background-color: #FFF
+      border-radius: 20px
+      display: block
+      padding: 10px 16px
+
+  &__payment
+    display: flex
+    flex-direction: column
+    margin-left: auto
+
+    span
+      font-size: 14px
+      color: #000
+      font-weight: 500
+      line-height: 1
+
+  &__button-pay
+    border: 1px solid #FF0B37
+    border-radius: 8px
+    padding: 10px
+    padding-bottom: 10px
+    min-width: 170px
+    display: block
+
+  &__button-more
+    width: 40px
+    height: 40px
+    background-color: #FF0B37
+    border-radius: 50%
+    border: none
+    padding: 0
+    position: absolute
+    top: 16px
+    right: 0
+    cursor: pointer
+    transition: background-color 0.3s, transform 0.3s
+
+    &._is-active
+      background-color: #7A808E
+      transform: rotate(90deg)
+
+    &:hover
+      background-color: #AB0422
+
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 6px
+      height: 10px
+      background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.27971 5.35356L0.597732 8.03554C0.207208 8.42606 0.207207 9.05923 0.597732 9.44975C0.988256 9.84028 1.62142 9.84028 2.01195 9.44975L5.75459 5.70711C5.94985 5.51185 5.94985 5.19527 5.75459 5L2.01195 1.25736C1.62142 0.866836 0.988256 0.866836 0.597731 1.25736C0.207207 1.64788 0.207207 2.28105 0.597732 2.67157L3.27971 5.35356Z' fill='white'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+
+  &__container
+    padding-top: 48px
+    display: none
+
+    & ^[0]
+      &__name
+        margin-bottom: 16px
+
+  &__content-item
+    margin-bottom: 48px
+
+    &:last-child
+      margin-bottom: 0
+
+    &--services
+      .personal-cabinet__room
+        margin-left: 0
+
+      table
+        tr, th
+          td
+            &:first-child
+              width: 48%
+
+  &__content
+    background-color: #FFFFFF
+    border-radius: 8px
+
+    p
+      font-size: 14px
+      color: #000
+      font-weight: 500
+      line-height: 1.1
+      margin-top: 0
+      margin-bottom: 15px
+
+      &:last-child
+        margin-bottom: 0
+
+  &__docs
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    padding: 32px
+
+  &__doc
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    text-decoration: none
+    margin-right: 64px
+
+    &:last-child
+      margin-right: 0
+
+    @media (max-width: 797px)
+      position: static
+      margin-bottom: 20px
+      margin-right: auto
+      margin-left: auto
+
+    i
+      width: 68px
+      height: 80px
+      margin-bottom: 16px
+
+      @media (max-width: 797px)
+        width: 48px
+        height: 60px
+        margin-bottom: 8px
+
+      svg
+        max-width: 100%
+        height: auto
+
+    span
+      font-size: 14px
+      color: #000
+      font-weight: 500
+      line-height: 1
+
+  &__table
+    table
+      width: 100%
+      border-radius: 8px
+      margin-bottom: 24px
+      border-collapse: collapse
+      overflow: hidden
+
+      .total-price-tour
+        color: #FF0B37
+
+      .total-name-price-tour
+        text-align: right
+
+        p
+          font-weight: 700
+          margin-right: 32px
+
+      tr
+        td, th
+          font-size: 14px
+          font-weight: 500
+          line-height: 1.1
+          text-align: left
+
+          @media (max-width: 639px)
+            font-size: 10px
+
+          p
+            font-size: 14px
+
+            @media (max-width: 639px)
+              font-size: 10px
+
+        th
+          color: #7A808E
+          padding: 16px
+
+          @media (max-width: 767px)
+            padding: 8px
+
+          p
+            color: #7A808E
+
+        td
+          font-size: 14px
+          color: #2E3035
+          font-weight: 500
+          line-height: 1.1
+          padding: 16px 16px
+          border-top: 1px solid #E0E0E0
+
+          @media (max-width: 767px)
+            padding: 16px 10px
+
+          @media (max-width: 639px)
+            font-size: 10px

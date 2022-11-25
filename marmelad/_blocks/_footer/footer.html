@@ -1,6 +1,6 @@
-<footer block="footer" {% if pageTitle == "Контакты" %}mods="no-content"{% endif %}>
+<footer block="footer" {% if pageTitle == "Контакты" or pageTitle == "Личный кабинет" %}mods="no-content"{% endif %}>
   <div elem="section">
-    {% if pageTitle != "Контакты" %}
+    {% if pageTitle != "Контакты" and pageTitle != "Личный кабинет" %}
     <div elem="inner" class="contain">
       <a elem="button-go-to-top" class="button-default" href="#">
         <span>вверх</span>
