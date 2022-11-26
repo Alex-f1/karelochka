@@ -7,6 +7,12 @@
     a, &__separator
       color: #7A808E
 
+  .sorting-tours
+    margin-right: 0
+
+    &__items
+      overflow-x: auto
+
   &__tabs-panel
     padding-top: 4px
     background-color: #EDF0F7
@@ -79,6 +85,9 @@
     margin-bottom: 24px
     position: relative
 
+    @media (max-width: 1279px)
+      padding: 16px
+
     &:before
       content: ''
       position: absolute
@@ -98,6 +107,9 @@
 
       & ^[0]
         &__number
+          @media (max-width: 767px)
+            padding-top: 50px
+
           &:before
             display: block
 
@@ -118,6 +130,10 @@
     width: 100%
     position: relative
 
+    @media (max-width: 767px)
+      align-items: flex-start
+      padding-right: 50px
+
   &__number
     font-size: 14px
     color: #7A808E
@@ -126,6 +142,9 @@
     text-align: center
     margin-right: 24px
     width: 24px
+
+    @media (max-width: 1279px)
+      margin-right: 12px
 
     &:before
       content: ''
@@ -145,18 +164,55 @@
     display: flex
     align-items: center
 
+    @media (max-width: 767px)
+      flex-direction: column
+      align-items: flex-start
+
   &__col
     width: 50%
     margin-right: 32px
 
+    @media (max-width: 1279px)
+      width: 75%
+      margin-right: 12px
+
+    @media (max-width: 767px)
+      width: 100% !important
+      margin-right: 0
+      margin-left: 0 !important
+
+    & ^[0]
+      &__dates
+        @media (max-width: 959px)
+          flex-wrap: wrap
+
     &:last-child
       margin-right: 0
+
+      @media (max-width: 1279px)
+        width: 25%
+        margin-left: auto
+
+      @media (max-width: 959px)
+        width: 50%
+
+      @media (max-width: 767px)
+        margin-top: 12px
+
+      & ^[0]
+        &__info-tour
+          @media (max-width: 1279px)
+            flex-direction: column
 
   &__info-head
     display: flex
     align-items: center
     width: 100%
     margin-bottom: 10px
+
+    @media (max-width: 767px)
+      flex-direction: column
+      align-items: flex-start
 
   &__name
     font-size: 20px
@@ -165,6 +221,9 @@
     line-height: 1.1
     text-decoration: none
     transition: color 0.3s
+
+    @media (max-width: 767px)
+      font-size: 18px
 
     &:hover
       color: #ff0b37
@@ -177,8 +236,18 @@
     margin-left: 40px
     display: none
 
+    @media (max-width: 959px)
+      font-size: 16px
+
+    @media (max-width: 767px)
+      margin-left: 0
+      margin-top: 4px
+
   &__price
     margin-left: auto
+
+    @media (max-width: 767px)
+      margin-left: 0
 
     span
       font-size: 20px
@@ -186,12 +255,21 @@
       font-weight: 500
       line-height: 1.1
 
+      @media (max-width: 639px)
+        font-size: 16px
+
   &__not-full-price
     color: #000 !important
 
   &__info-tour
     display: flex
     align-items: center
+
+    @media (max-width: 1279px)
+      align-items: flex-end
+
+    @media (max-width: 767px)
+      align-items: flex-start
 
   &__dates
     font-weight: 500
@@ -201,12 +279,25 @@
     display: flex
     align-items: center
 
+    @media (max-width: 479px)
+      flex: 0 0 auto
+
     span
       margin-right: 24px
       margin-left: 24px
 
+      @media (max-width: 1279px)
+        margin-right: 12px
+        margin-left: 12px
+
+      @media (max-width: 959px)
+        margin-bottom: 4px
+
   &__date
     margin-right: 4px
+
+    @media (max-width: 959px)
+      margin-bottom: 4px
 
   &__day
     padding: 8px 12px
@@ -214,16 +305,32 @@
     border-radius: 16px
     transition: background-color 0.3s, ease 0.3s
 
+    @media (max-width: 959px)
+      margin-bottom: 4px
+
     &--weekend
       color: #FF0B37
 
   &__day-hours
     margin-left: 24px
 
+    @media (max-width: 1279px)
+      margin-left: 12px
+
+    @media (max-width: 767px)
+      margin-left: 0
+      width: 100%
+      margin-bottom: 12px
+
   &__room
     display: flex
     align-items: center
     margin-left: 40px
+
+    @media (max-width: 959px)
+      margin-bottom: 4px
+      margin-left: 0
+      width: 100%
 
     span
       font-size: 14px
@@ -263,6 +370,15 @@
 
   &__confirmed
     margin-right: 32px
+    text-align: center
+
+    @media (max-width: 1279px)
+      margin-right: 0
+      margin-bottom: 12px
+
+    &:last-child
+      @media (max-width: 1279px)
+        margin-bottom: 0
 
     span
       font-size: 14px
@@ -278,6 +394,13 @@
     display: flex
     flex-direction: column
     margin-left: auto
+
+    @media (max-width: 1279px)
+      order: -1
+      margin-bottom: 12px
+
+    @media (max-width: 767px)
+      margin-left: 0
 
     span
       font-size: 14px
@@ -306,6 +429,9 @@
     cursor: pointer
     transition: background-color 0.3s, transform 0.3s
 
+    @media (max-width: 767px)
+      top: 0
+
     &._is-active
       background-color: #7A808E
       transform: rotate(90deg)
@@ -330,12 +456,19 @@
     padding-top: 48px
     display: none
 
+    @media (max-width: 1279px)
+      padding-top: 16px
+      border-top: 2px solid #ccc
+
     & ^[0]
       &__name
         margin-bottom: 16px
 
   &__content-item
     margin-bottom: 48px
+
+    @media (max-width: 1279px)
+      margin-bottom: 32px
 
     &:last-child
       margin-bottom: 0
@@ -349,6 +482,18 @@
           td
             &:first-child
               width: 48%
+
+    &--payment
+      table
+        @media (max-width: 959px)
+          width: 960px !important
+
+        @media (max-width: 550px)
+          width: 700px !important
+
+        .personal-cabinet__button-pay
+          @media (max-width: 959px)
+            width: 180px
 
   &__content
     background-color: #FFFFFF
@@ -371,6 +516,9 @@
     align-items: center
     padding: 32px
 
+    @media (max-width: 767px)
+      padding: 16px
+
   &__doc
     display: flex
     flex-direction: column
@@ -383,10 +531,7 @@
       margin-right: 0
 
     @media (max-width: 797px)
-      position: static
       margin-bottom: 20px
-      margin-right: auto
-      margin-left: auto
 
     i
       width: 68px
@@ -409,12 +554,18 @@
       line-height: 1
 
   &__table
+    @media (max-width: 1279px)
+      overflow-x: auto
+
     table
       width: 100%
       border-radius: 8px
       margin-bottom: 24px
       border-collapse: collapse
       overflow: hidden
+
+      @media (max-width: 550px)
+        width: 480px
 
       .total-price-tour
         color: #FF0B37
