@@ -12,6 +12,13 @@
 
     &__items
       overflow-x: auto
+      width: 100%
+
+    &__item
+      &._is-active
+        color: #fff
+        background-color: #ff0b37
+        pointer-events: none
 
   &__tabs-panel
     padding-top: 4px
@@ -59,6 +66,12 @@
 
         @media (max-width: 639px)
           margin-bottom: 15px
+
+  &__tab-content
+    display: none
+
+    &._is-active-tab-content
+      display: block
 
   &__head
     margin-top: 24px
@@ -589,6 +602,10 @@
 
           p
             font-size: 14px
+
+            span
+              color: #bdbdbd
+              margin-right: 10px
 
             @media (max-width: 639px)
               font-size: 10px

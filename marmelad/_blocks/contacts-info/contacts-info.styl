@@ -6,6 +6,31 @@
     padding-top: 30px
     padding-bottom: 30px
 
+  &--personal-cabinet
+    padding-top: 0 !important
+
+    & ^[0]
+      &__form
+        margin-bottom: 16px
+
+      &__fields
+        max-width: 528px + 16px
+
+        @media (max-width: 797px)
+          max-width: 100% !important
+
+        &:first-child
+          padding-right: 8px
+
+          @media (max-width: 797px)
+            padding-right: 0
+
+        &:last-child
+          padding-left: 8px
+
+          @media (max-width: 797px)
+            padding-left: 0
+
   &__title
     font-size: 36px
     color: #2E3035
@@ -135,6 +160,19 @@
     @media (max-width: 639px)
       padding: 16px
 
+    &--personal-data
+      & ^[0]
+        &__button-send
+          margin-left: auto
+
+    &--change-password
+      & ^[0]
+        &__fields
+          max-width: 528px + 8px
+
+          @media (max-width: 797px)
+            max-width: 100%
+
   &__fields
     max-width: 528px
     width: 100%
@@ -183,6 +221,13 @@
       font-weight: 500
       line-height: 1
 
+  &__wrapper
+    display: flex
+    justify-content: space-between
+
+    @media (max-width: 797px)
+      display: block
+
   &__field
     margin-bottom: 16px
 
@@ -195,10 +240,39 @@
       span
         color: #ff0b37
 
+  &__field-double
+    display: flex
+    justify-content: space-between
+
+    @media (max-width: 639px)
+      display: block
+
+    & ^[0]
+      &__field
+        width: 256px + 8px
+
+        @media (max-width: 797px)
+          width: 50%
+
+        @media (max-width: 639px)
+          width: 100%
+
+        &:first-child
+          padding-right: 4px
+
+          @media (max-width: 639px)
+            padding-right: 0
+
+        &:last-child
+          padding-left: 4px
+
+          @media (max-width: 639px)
+            padding-left: 0
+
   &__input
     input
       font-size: 16px
-      color: #7A808E
+      color: #2E3035
       font-weight: 500
       line-height: 1
       width: 100%
@@ -207,6 +281,35 @@
       border-radius: 6px
       height: 48px
       padding: 14px 16px
+
+    ::placeholder
+      font-size: 16px
+      color: #7A808E
+      font-weight: 500
+      line-height: 1
+
+    &--new-password
+      position: relative
+
+  &__button-show-password
+    position: absolute
+    top: 4px
+    right: 0
+    z-index: 2
+    width: 40px
+    height: 40px
+    border: none
+    padding: 0
+    background-color: transparent
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M31.0002 7.99991L8.00015 30.9999L6.58594 29.5857L29.5859 6.58569L31.0002 7.99991Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24.0455 14.1261C22.8046 13.4519 21.4368 13 20 13C15.3928 13 11.4964 17.6464 10.2107 19.3682C9.92977 19.7444 9.92976 20.2556 10.2107 20.6318C10.8431 21.4788 12.1073 23.0334 13.7771 24.3946L15.6699 22.5017C15.2439 21.7659 15 20.9114 15 20C15 17.2386 17.2386 15 20 15C20.9114 15 21.7659 15.2439 22.5017 15.6699L24.0455 14.1261ZM18.4382 22.5619L22.5619 18.4381C22.8399 18.8931 23 19.4278 23 20C23 21.6568 21.6569 23 20 23C19.4279 23 18.8931 22.8398 18.4382 22.5619ZM16.9998 24.0002C17.8355 24.628 18.8743 25 20 25C22.7614 25 25 22.7614 25 20C25 18.8743 24.628 17.8355 24.0002 16.9998L25.7592 15.2409C27.6584 16.679 29.0996 18.4445 29.7893 19.3682C30.0702 19.7444 30.0702 20.2556 29.7893 20.6318C28.5036 22.3536 24.6072 27 20 27C18.3573 27 16.8049 26.4093 15.429 25.571L16.9998 24.0002Z' fill='black'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: 0 0
+    background-size: contain
+    cursor: pointer
+    transition: background 0.3s, ease 0.3s
+
+    &._is-show-password
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M29.7893 20.6318C28.5036 22.3536 24.6072 27 20 27C15.3928 27 11.4964 22.3536 10.2107 20.6318C9.92976 20.2556 9.92977 19.7444 10.2107 19.3682C11.4964 17.6464 15.3928 13 20 13C24.6072 13 28.5036 17.6464 29.7893 19.3682C30.0702 19.7444 30.0702 20.2556 29.7893 20.6318ZM20 25C22.7614 25 25 22.7614 25 20C25 17.2386 22.7614 15 20 15C17.2386 15 15 17.2386 15 20C15 22.7614 17.2386 25 20 25Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.5008 21C19.8815 21 21.0008 19.8808 21.0008 18.5C21.0008 17.9348 21.4903 17.3349 21.924 17.6975C22.5821 18.2478 23.0008 19.075 23.0008 20C23.0008 21.6569 21.6576 23 20.0008 23C19.0758 23 18.2485 22.5814 17.6982 21.9232C17.3357 21.4896 17.9356 21 18.5008 21Z' fill='black'/%3E%3C/svg%3E%0A")
 
   &__textarea
     textarea
@@ -222,6 +325,84 @@
       min-height: 146px
       padding: 14px 16px
 
+  &__select
+    height: 48px
+
+    .select2-container
+      .select2-dropdown
+        z-index: 5
+        border: 2px solid #EDF0F7
+        overflow: hidden
+
+        @media (max-width: 1279px)
+          z-index: 10
+
+        &.select2-dropdown--below
+          border-radius: 0 0 6px 6px
+          padding-top: 0
+          top: -2px
+
+        &.select2-dropdown--above
+          border-radius: 6px 6px 0 0
+          padding-bottom: 0
+          top: 2px
+
+      .select2-results__option
+        padding: 16px
+
+    select
+      opacity: 0
+      visibility: hidden
+
+    &:first-child
+      border-left: none
+
+    .select2
+      height: 100%
+
+      .selection
+        height: 100%
+
+      &.select2-container--open
+        .select2-selection__arrow
+          b
+            transform: rotate(180deg)
+
+    .select2-container--default .select2-selection--single
+      border: none
+      border: 2px solid #EDF0F7
+      border-radius: 6px
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered
+      font-size: 16px
+      color: #2E3035
+      font-weight: 500
+      line-height: 1
+
+    .select2-container .select2-selection--single
+      height: 100%
+      display: flex
+      align-items: center
+
+    .select2-container .select2-selection--single .select2-selection__rendered
+      padding-left: 16px
+      padding-right: 16px
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow
+      top: 50%
+      right: 16px
+      transform: translateY(-50%)
+
+      b
+        border: none
+        width: 10px
+        height: 7px
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 3.63384L2.31802 0.951858C1.9275 0.561334 1.29433 0.561333 0.903808 0.951858C0.513284 1.34238 0.513284 1.97555 0.903808 2.36607L4.64645 6.10871C4.84171 6.30398 5.1583 6.30398 5.35356 6.10871L9.0962 2.36607C9.48672 1.97555 9.48672 1.34238 9.0962 0.951858C8.70568 0.561333 8.07251 0.561334 7.68199 0.951858L5 3.63384Z' fill='%232E3035'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-size: contain
+        // transition: transform 0.3s, ease 0.3s
+
   &__button-send
     display: flex
     align-items: center
@@ -230,6 +411,12 @@
 
     @media (max-width: 767px)
       width: 100%
+
+    &--save
+      min-width: 254px
+
+      &:before
+        display: none
 
     &:before
       content: ''

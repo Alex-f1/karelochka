@@ -104,6 +104,12 @@ function initCustomSelect() {
     minimumResultsForSearch: -1,
     width: '100%',
   });
+  $('.contacts-info select').select2({
+    dropdownPosition: 'below',
+    minimumResultsForSearch: -1,
+    width: '100%',
+    dropdownParent: $('.contacts-info__select')
+  });
 
   new AirDatepicker('.js-choice-date', {
     autoClose: true,

@@ -3,865 +3,983 @@
     <div elem="tabs-panel">
       <div elem="tabs" class="contain">
         <a elem="button-tab" class="_is-active js-button-tab" href="#">Мои заявки</a>
+        
+        {% if pageTitle == "Личный кабинет Турагент" %}
+        <a elem="button-tab" class="js-button-tab" href="#">Настройки экспорта</a>
+        {% endif %}
+        
         <a elem="button-tab" class="js-button-tab" href="#">Профиль</a>
       </div>
     </div>
-    <div elem="inner" class="contain">
-      <div elem="head">
-        {% include "bread-crumbs.html" %}
-        <h1 elem="title">Мои заявки</h1>
-        <div elem="sorting-panel">
-          <div block="sorting-tours">
-            <div elem="title">Показать</div>
-            <div elem="items">
-              <a elem="item" href="#">Все</a>
-              <a elem="item" href="#">Оплаченные</a>
-              <a elem="item" href="#">Отмененные</a>
+    <div elem="tabs-content">
+      <div elem="tab-content" class="_is-active-tab-content">
+        <div elem="inner" class="contain">
+          <div elem="head">
+            {% include "bread-crumbs.html" %}
+            <h1 elem="title">Мои заявки</h1>
+            <div elem="sorting-panel">
+              <div block="sorting-tours">
+                <div elem="title">Показать</div>
+                <div elem="items">
+                  <a elem="item" class="_is-active" href="#">Все</a>
+                  <a elem="item" href="#">Оплаченные</a>
+                  <a elem="item" href="#">Отмененные</a>
+                  {% if pageTitle == "Личный кабинет Турагент" %}
+                  <form elem="search-applications">
+                    <div elem="search-applications-input">
+                      <input type="text" placeholder="Поиск заявок">
+                      <button elem="search-applications-button" type="submit"></button>
+                    </div>
+                  </form>
+                  {% endif %}
+                </div>
+              </div><!-- sorting-tours -->
             </div>
-          </div><!-- sorting-tours -->
+          </div>
+          <div elem="items">
+            <div elem="item" mods="not-pay">
+              <div elem="body">
+                <div elem="number">1</div>
+                <div elem="info">
+                  <div elem="col">
+                    <div elem="info-head">
+                      <a elem="name" href="#">Легенды Карелии Лето 2022</a>
+                      <div elem="not-pay">Не оплачена</div>
+                    </div>
+                    <div elem="info-tour">
+                      <div elem="dates">
+                        <div elem="date">05.10</div>
+                        <div elem="day">СР</div>
+                        <span>&mdash;</span>
+                        <div elem="date">09.10</div>
+                        <div elem="day" mods="weekend">ВС</div>
+                        <div elem="day-hours">5 дней / 4 ночи</div>
+                        <div elem="room">
+                          <i elem="adult-icon">
+                            <small>2</small>
+                          </i>
+                          <span>x 1 номер</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div elem="col">
+                    <div elem="info-head">
+                      <div elem="price">
+                        <span elem="not-full-price">0</span>
+                        <span>/</span>
+                        <span elem="full-price"> 57 120 руб.</span>
+                      </div>
+                    </div>
+                    <div elem="info-tour">
+                      <div elem="confirmed">
+                        <span>Подтверждена</span>
+                      </div>
+                      <div elem="confirmed">
+                        <span>30.06.2022</span>
+                      </div>
+                      <div elem="payment">
+                        <span>Частично оплачена (30%)</span>
+                        <a elem="button-pay" class="button-default" href="#">Внести платеж</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button elem="button-more" class="js-button-more-info" type="button"></button>
+              </div>
+              <div elem="container">
+                <div elem="content-item">
+                  <div elem="name">Документы <span>(3)</span></div>
+                  <div elem="content">
+                    <div elem="docs">
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Договор</span>
+                      </a>
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Счет</span>
+                      </a>
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Ваучер</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="payment">
+                  <div elem="name">Оплата</div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>Предоплата</p>
+                            </th>
+                            <th>
+                              <p>%</p>
+                            </th>
+                            <th>
+                              <p>Оплатить до</p>
+                            </th>
+                            <th>
+                              <p>Дата оплаты</p>
+                            </th>
+                            <th>
+                              <p>Тип</p>
+                            </th>
+                            <th>
+                              <p>Плательщик</p>
+                            </th>
+                            <th>
+                              <p>Статус</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>17 120 руб.</p>
+                            </td>
+                            <td>
+                              <p>30%</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>Оплата на сайте</p>
+                            </td>
+                            <td>
+                              <p>Пастухов В. А.</p>
+                            </td>
+                            <td>
+                              <p>Оплачено</p>
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>17 120 руб.</p>
+                            </td>
+                            <td>
+                              <p>30%</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>Ожидает оплаты</p>
+                            </td>
+                            <td>
+                              <a class="personal-cabinet__button-pay button-default" href="#">Внести платеж</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="tourists">
+                  <div elem="name">Туристы <span>(2)</span></div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>ФИО</p>
+                            </th>
+                            <th>
+                              <p>Документ</p>
+                            </th>
+                            <th>
+                              <p>Телефон</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p><span>1</span> Пастухов Владимир Александрович</p>
+                            </td>
+                            <td>
+                              <p>Паспорт №1234 123456</p>
+                            </td>
+                            <td>
+                              <p>+7 900 000 00 00</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><span>2</span>Пастухов Владимир Александрович</p>
+                            </td>
+                            <td>
+                              <p>Паспорт №1234 123456</p>
+                            </td>
+                            <td>
+                              <p>+7 900 000 00 00</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="services">
+                  <div elem="name">Услуги</div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>Тип размещения</p>
+                            </th>
+                            <th>
+                              <p>Количество</p>
+                            </th>
+                            <th>
+                              <p>Стоимость</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>Отель Карелия&SPA 4 Двухместное размещение взрослые</p>
+                            </td>
+                            <td>
+                              <div class="personal-cabinet__room">
+                                <i class="personal-cabinet__adult-icon">
+                                  <small>2</small>
+                                </i>
+                                <span>x 1 номер</span>
+                              </div>
+                            </td>
+                            <td>
+                              <p>57 120 руб.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="total-name-price-tour" colspan="2">
+                              <p>Итого стоимость тура</p>
+                            </td>
+                            <td class="total-price-tour">
+                              <p>57 120 руб.</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div elem="item">
+              <div elem="body">
+                <div elem="number">2</div>
+                <div elem="info">
+                  <div elem="col">
+                    <div elem="info-head">
+                      <a elem="name" href="#">Легенды Карелии Лето 2022</a>
+                      <div elem="not-pay">Не оплачена</div>
+                    </div>
+                    <div elem="info-tour">
+                      <div elem="dates">
+                        <div elem="date">05.10</div>
+                        <div elem="day">СР</div>
+                        <span>&mdash;</span>
+                        <div elem="date">09.10</div>
+                        <div elem="day" mods="weekend">ВС</div>
+                        <div elem="day-hours">5 дней / 4 ночи</div>
+                        <div elem="room">
+                          <i elem="adult-icon">
+                            <small>2</small>
+                          </i>
+                          <span>x 1 номер</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div elem="col">
+                    <div elem="info-head">
+                      <div elem="price">
+                        <span elem="not-full-price">17 120</span>
+                        <span>/</span>
+                        <span elem="full-price"> 57 120 руб.</span>
+                      </div>
+                    </div>
+                    <div elem="info-tour">
+                      <div elem="confirmed">
+                        <span>Подтверждена</span>
+                      </div>
+                      <div elem="confirmed">
+                        <span>30.06.2022</span>
+                      </div>
+                      <div elem="payment">
+                        <span>Частично оплачена (30%)</span>
+                        <!-- <a elem="button-pay" class="button-default" href="#">Внести платеж</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button elem="button-more" class="js-button-more-info" type="button"></button>
+              </div>
+              <div elem="container">
+                <div elem="content-item">
+                  <div elem="name">Документы <span>(3)</span></div>
+                  <div elem="content">
+                    <div elem="docs">
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Договор</span>
+                      </a>
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Счет</span>
+                      </a>
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Ваучер</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="payment">
+                  <div elem="name">Оплата</div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>Предоплата</p>
+                            </th>
+                            <th>
+                              <p>%</p>
+                            </th>
+                            <th>
+                              <p>Оплатить до</p>
+                            </th>
+                            <th>
+                              <p>Дата оплаты</p>
+                            </th>
+                            <th>
+                              <p>Тип</p>
+                            </th>
+                            <th>
+                              <p>Плательщик</p>
+                            </th>
+                            <th>
+                              <p>Статус</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>17 120 руб.</p>
+                            </td>
+                            <td>
+                              <p>30%</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>Оплата на сайте</p>
+                            </td>
+                            <td>
+                              <p>Пастухов В. А.</p>
+                            </td>
+                            <td>
+                              <p>Оплачено</p>
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>17 120 руб.</p>
+                            </td>
+                            <td>
+                              <p>30%</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>Ожидает оплаты</p>
+                            </td>
+                            <td>
+                              <a class="personal-cabinet__button-pay button-default" href="#">Внести платеж</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="tourists">
+                  <div elem="name">Туристы <span>(2)</span></div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>ФИО</p>
+                            </th>
+                            <th>
+                              <p>Документ</p>
+                            </th>
+                            <th>
+                              <p>Телефон</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p><span>1</span> Пастухов Владимир Александрович</p>
+                            </td>
+                            <td>
+                              <p>Паспорт №1234 123456</p>
+                            </td>
+                            <td>
+                              <p>+7 900 000 00 00</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><span>2</span> Пастухов Владимир Александрович</p>
+                            </td>
+                            <td>
+                              <p>Паспорт №1234 123456</p>
+                            </td>
+                            <td>
+                              <p>+7 900 000 00 00</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="services">
+                  <div elem="name">Услуги</div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>Тип размещения</p>
+                            </th>
+                            <th>
+                              <p>Количество</p>
+                            </th>
+                            <th>
+                              <p>Стоимость</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>Отель Карелия&SPA 4 Двухместное размещение взрослые</p>
+                            </td>
+                            <td>
+                              <div class="personal-cabinet__room">
+                                <i class="personal-cabinet__adult-icon">
+                                  <small>2</small>
+                                </i>
+                                <span>x 1 номер</span>
+                              </div>
+                            </td>
+                            <td>
+                              <p>57 120 руб.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="total-name-price-tour" colspan="2">
+                              <p>Итого стоимость тура</p>
+                            </td>
+                            <td class="total-price-tour">
+                              <p>57 120 руб.</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div elem="item">
+              <div elem="body">
+                <div elem="number">3</div>
+                <div elem="info">
+                  <div elem="col">
+                    <div elem="info-head">
+                      <a elem="name" href="#">Легенды Карелии Лето 2022</a>
+                      <div elem="not-pay">Не оплачена</div>
+                    </div>
+                    <div elem="info-tour">
+                      <div elem="dates">
+                        <div elem="date">05.10</div>
+                        <div elem="day">СР</div>
+                        <span>&mdash;</span>
+                        <div elem="date">09.10</div>
+                        <div elem="day" mods="weekend">ВС</div>
+                        <div elem="day-hours">5 дней / 4 ночи</div>
+                        <div elem="room">
+                          <i elem="adult-icon">
+                            <small>2</small>
+                          </i>
+                          <span>x 1 номер</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div elem="col">
+                    <div elem="info-head">
+                      <div elem="price">
+                        <span elem="not-full-price">17 120</span>
+                        <span>/</span>
+                        <span elem="full-price"> 57 120 руб.</span>
+                      </div>
+                    </div>
+                    <div elem="info-tour">
+                      <div elem="confirmed">
+                        <span>Подтверждена</span>
+                      </div>
+                      <div elem="confirmed">
+                        <span>30.06.2022</span>
+                      </div>
+                      <div elem="payment">
+                        <span>Частично оплачена (30%)</span>
+                        <!-- <a elem="button-pay" class="button-default" href="#">Внести платеж</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button elem="button-more" class="js-button-more-info" type="button"></button>
+              </div>
+              <div elem="container">
+                <div elem="content-item">
+                  <div elem="name">Документы <span>(3)</span></div>
+                  <div elem="content">
+                    <div elem="docs">
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Договор</span>
+                      </a>
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Счет</span>
+                      </a>
+                      <a elem="doc" download="" href="#">
+                        <i>
+                          <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
+                            <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
+                            <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
+                            <path
+                              d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
+                              fill="white" />
+                          </svg>
+                        </i>
+                        <span>Ваучер</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="payment">
+                  <div elem="name">Оплата</div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>Предоплата</p>
+                            </th>
+                            <th>
+                              <p>%</p>
+                            </th>
+                            <th>
+                              <p>Оплатить до</p>
+                            </th>
+                            <th>
+                              <p>Дата оплаты</p>
+                            </th>
+                            <th>
+                              <p>Тип</p>
+                            </th>
+                            <th>
+                              <p>Плательщик</p>
+                            </th>
+                            <th>
+                              <p>Статус</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>17 120 руб.</p>
+                            </td>
+                            <td>
+                              <p>30%</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>Оплата на сайте</p>
+                            </td>
+                            <td>
+                              <p>Пастухов В. А.</p>
+                            </td>
+                            <td>
+                              <p>Оплачено</p>
+                            </td>
+                            <td>
+                              
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>17 120 руб.</p>
+                            </td>
+                            <td>
+                              <p>30%</p>
+                            </td>
+                            <td>
+                              <p>12.10.2022</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>-</p>
+                            </td>
+                            <td>
+                              <p>Ожидает оплаты</p>
+                            </td>
+                            <td>
+                              <a class="personal-cabinet__button-pay button-default" href="#">Внести платеж</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="tourists">
+                  <div elem="name">Туристы <span>(2)</span></div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>ФИО</p>
+                            </th>
+                            <th>
+                              <p>Документ</p>
+                            </th>
+                            <th>
+                              <p>Телефон</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p><span>1</span> Пастухов Владимир Александрович</p>
+                            </td>
+                            <td>
+                              <p>Паспорт №1234 123456</p>
+                            </td>
+                            <td>
+                              <p>+7 900 000 00 00</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><span>2</span> Пастухов Владимир Александрович</p>
+                            </td>
+                            <td>
+                              <p>Паспорт №1234 123456</p>
+                            </td>
+                            <td>
+                              <p>+7 900 000 00 00</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="services">
+                  <div elem="name">Услуги</div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>Тип размещения</p>
+                            </th>
+                            <th>
+                              <p>Количество</p>
+                            </th>
+                            <th>
+                              <p>Стоимость</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>Отель Карелия&SPA 4 Двухместное размещение взрослые</p>
+                            </td>
+                            <td>
+                              <div class="personal-cabinet__room">
+                                <i class="personal-cabinet__adult-icon">
+                                  <small>2</small>
+                                </i>
+                                <span>x 1 номер</span>
+                              </div>
+                            </td>
+                            <td>
+                              <p>57 120 руб.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="total-name-price-tour" colspan="2">
+                              <p>Итого стоимость тура</p>
+                            </td>
+                            <td class="total-price-tour">
+                              <p>57 120 руб.</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div elem="items">
-        <div elem="item" mods="not-pay">
-          <div elem="body">
-            <div elem="number">1</div>
-            <div elem="info">
-              <div elem="col">
-                <div elem="info-head">
-                  <a elem="name" href="#">Легенды Карелии Лето 2022</a>
-                  <div elem="not-pay">Не оплачена</div>
-                </div>
-                <div elem="info-tour">
-                  <div elem="dates">
-                    <div elem="date">05.10</div>
-                    <div elem="day">СР</div>
-                    <span>&mdash;</span>
-                    <div elem="date">09.10</div>
-                    <div elem="day" mods="weekend">ВС</div>
-                    <div elem="day-hours">5 дней / 4 ночи</div>
-                    <div elem="room">
-                      <i elem="adult-icon">
-                        <small>2</small>
-                      </i>
-                      <span>x 1 номер</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div elem="col">
-                <div elem="info-head">
-                  <div elem="price">
-                    <span elem="not-full-price">0</span>
-                    <span>/</span>
-                    <span elem="full-price"> 57 120 руб.</span>
-                  </div>
-                </div>
-                <div elem="info-tour">
-                  <div elem="confirmed">
-                    <span>Подтверждена</span>
-                  </div>
-                  <div elem="confirmed">
-                    <span>30.06.2022</span>
-                  </div>
-                  <div elem="payment">
-                    <span>Частично оплачена (30%)</span>
-                    <a elem="button-pay" class="button-default" href="#">Внести платеж</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button elem="button-more" class="js-button-more-info" type="button"></button>
-          </div>
-          <div elem="container">
-            <div elem="content-item">
-              <div elem="name">Документы <span>(3)</span></div>
-              <div elem="content">
-                <div elem="docs">
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Договор</span>
-                  </a>
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Счет</span>
-                  </a>
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Ваучер</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="payment">
-              <div elem="name">Оплата</div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>Предоплата</p>
-                        </th>
-                        <th>
-                          <p>%</p>
-                        </th>
-                        <th>
-                          <p>Оплатить до</p>
-                        </th>
-                        <th>
-                          <p>Дата оплаты</p>
-                        </th>
-                        <th>
-                          <p>Тип</p>
-                        </th>
-                        <th>
-                          <p>Плательщик</p>
-                        </th>
-                        <th>
-                          <p>Статус</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>17 120 руб.</p>
-                        </td>
-                        <td>
-                          <p>30%</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>Оплата на сайте</p>
-                        </td>
-                        <td>
-                          <p>Пастухов В. А.</p>
-                        </td>
-                        <td>
-                          <p>Оплачено</p>
-                        </td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>17 120 руб.</p>
-                        </td>
-                        <td>
-                          <p>30%</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>Ожидает оплаты</p>
-                        </td>
-                        <td>
-                          <a class="personal-cabinet__button-pay button-default" href="#">Внести платеж</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="tourists">
-              <div elem="name">Туристы <span>(2)</span></div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>ФИО</p>
-                        </th>
-                        <th>
-                          <p>Документ</p>
-                        </th>
-                        <th>
-                          <p>Телефон</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>Пастухов Владимир Александрович</p>
-                        </td>
-                        <td>
-                          <p>Паспорт №1234 123456</p>
-                        </td>
-                        <td>
-                          <p>+7 900 000 00 00</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>Пастухов Владимир Александрович</p>
-                        </td>
-                        <td>
-                          <p>Паспорт №1234 123456</p>
-                        </td>
-                        <td>
-                          <p>+7 900 000 00 00</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="services">
-              <div elem="name">Услуги</div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>Тип размещения</p>
-                        </th>
-                        <th>
-                          <p>Количество</p>
-                        </th>
-                        <th>
-                          <p>Стоимость</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>Отель Карелия&SPA 4 Двухместное размещение взрослые</p>
-                        </td>
-                        <td>
-                          <div class="personal-cabinet__room">
-                            <i class="personal-cabinet__adult-icon">
-                              <small>2</small>
-                            </i>
-                            <span>x 1 номер</span>
-                          </div>
-                        </td>
-                        <td>
-                          <p>57 120 руб.</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="total-name-price-tour" colspan="2">
-                          <p>Итого стоимость тура</p>
-                        </td>
-                        <td class="total-price-tour">
-                          <p>57 120 руб.</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+
+      {% if pageTitle == "Личный кабинет Турагент" %}
+      <div elem="tab-content">
+        <div elem="inner" class="contain">
+          <div elem="head">
+            {% include "bread-crumbs.html" %}
+            <h1 elem="title">Настройки экспорта</h1>
           </div>
         </div>
-        <div elem="item">
-          <div elem="body">
-            <div elem="number">2</div>
-            <div elem="info">
-              <div elem="col">
-                <div elem="info-head">
-                  <a elem="name" href="#">Легенды Карелии Лето 2022</a>
-                  <div elem="not-pay">Не оплачена</div>
-                </div>
-                <div elem="info-tour">
-                  <div elem="dates">
-                    <div elem="date">05.10</div>
-                    <div elem="day">СР</div>
-                    <span>&mdash;</span>
-                    <div elem="date">09.10</div>
-                    <div elem="day" mods="weekend">ВС</div>
-                    <div elem="day-hours">5 дней / 4 ночи</div>
-                    <div elem="room">
-                      <i elem="adult-icon">
-                        <small>2</small>
-                      </i>
-                      <span>x 1 номер</span>
+      </div>
+      {% endif %}
+
+      <div elem="tab-content">
+        <div elem="inner" class="contain">
+          <div elem="head">
+            {% include "bread-crumbs.html" %}
+            <h1 elem="title">Профиль</h1>
+            <div block="contacts-info" mods="personal-cabinet">
+              <form elem="form" mods="personal-data">
+                <div elem="name">Личные данные</div>
+                <div elem="wrapper">
+                  <div elem="fields">
+                    <div elem="field">
+                      <span>Имя <span>*</span></span>
+                      <div elem="input"><input type="text" value="Владимир" placeholder="Владимир"></div>
+                    </div>
+                    <div elem="field">
+                      <span>Ваш email <span>*</span></span>
+                      <div elem="input"><input type="text" value="Пастухов" placeholder="Пастухов"></div>
+                    </div>
+                    <div elem="field">
+                      <span>Логин<span>*</span></span>
+                      <div elem="input">
+                        <input type="text" value="vlpastuhov@test.ru" placeholder="vlpastuhov@test.ru">
+                      </div>
+                    </div>
+                  </div>
+                  <div elem="fields">
+                    <div elem="field">
+                      <span>Страна <span>*</span></span>
+                      <div elem="select">
+                        <select>
+                          <option value="Россия">Россия</option>
+                          <option value="Беларусь">Беларусь</option>
+                          <option value="Казахстан">Казахстан</option>
+                          <option value="Киргизия">Киргизия</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <span>Адрес<span>*</span></span>
+                      <div elem="input">
+                        <input type="text" placeholder="">
+                      </div>
+                    </div>
+                    <div elem="field-double">
+                      <div elem="field">
+                        <span>E-mail <span>*</span></span>
+                        <div elem="input"><input type="text" value="vlpastuhov@test.ru" placeholder="vlpastuhov@test.ru"></div>
+                      </div>
+                      <div elem="field">
+                        <span>Телефон</span>
+                        <div elem="input"><input type="text" placeholder=""></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div elem="col">
-                <div elem="info-head">
-                  <div elem="price">
-                    <span elem="not-full-price">17 120</span>
-                    <span>/</span>
-                    <span elem="full-price"> 57 120 руб.</span>
+                <button elem="button-send" mods="save" class="button-default" type="submit">
+                  <span>Сохранить</span>
+                </button>
+              </form>
+              <form elem="form" mods="change-password">
+                <div elem="name">Сменить пароль</div>
+                <div elem="fields">
+                  <div elem="field">
+                    <span>Старый Пароль <span>*</span></span>
+                    <div elem="input"><input type="text" value="Владимир" placeholder="Владимир"></div>
                   </div>
-                </div>
-                <div elem="info-tour">
-                  <div elem="confirmed">
-                    <span>Подтверждена</span>
+                  <div elem="field">
+                    <span>Новый Пароль <span>*</span></span>
+                    <div elem="input" mods="new-password">
+                      <input type="password" value="12345" placeholder="12345">
+                      <button elem="button-show-password" class="js-button-show-password" type="button"></button>
+                    </div>
                   </div>
-                  <div elem="confirmed">
-                    <span>30.06.2022</span>
-                  </div>
-                  <div elem="payment">
-                    <span>Частично оплачена (30%)</span>
-                    <!-- <a elem="button-pay" class="button-default" href="#">Внести платеж</a> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button elem="button-more" class="js-button-more-info" type="button"></button>
-          </div>
-          <div elem="container">
-            <div elem="content-item">
-              <div elem="name">Документы <span>(3)</span></div>
-              <div elem="content">
-                <div elem="docs">
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Договор</span>
-                  </a>
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Счет</span>
-                  </a>
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Ваучер</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="payment">
-              <div elem="name">Оплата</div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>Предоплата</p>
-                        </th>
-                        <th>
-                          <p>%</p>
-                        </th>
-                        <th>
-                          <p>Оплатить до</p>
-                        </th>
-                        <th>
-                          <p>Дата оплаты</p>
-                        </th>
-                        <th>
-                          <p>Тип</p>
-                        </th>
-                        <th>
-                          <p>Плательщик</p>
-                        </th>
-                        <th>
-                          <p>Статус</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>17 120 руб.</p>
-                        </td>
-                        <td>
-                          <p>30%</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>Оплата на сайте</p>
-                        </td>
-                        <td>
-                          <p>Пастухов В. А.</p>
-                        </td>
-                        <td>
-                          <p>Оплачено</p>
-                        </td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>17 120 руб.</p>
-                        </td>
-                        <td>
-                          <p>30%</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>Ожидает оплаты</p>
-                        </td>
-                        <td>
-                          <a class="personal-cabinet__button-pay button-default" href="#">Внести платеж</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="tourists">
-              <div elem="name">Туристы <span>(2)</span></div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>ФИО</p>
-                        </th>
-                        <th>
-                          <p>Документ</p>
-                        </th>
-                        <th>
-                          <p>Телефон</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>Пастухов Владимир Александрович</p>
-                        </td>
-                        <td>
-                          <p>Паспорт №1234 123456</p>
-                        </td>
-                        <td>
-                          <p>+7 900 000 00 00</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>Пастухов Владимир Александрович</p>
-                        </td>
-                        <td>
-                          <p>Паспорт №1234 123456</p>
-                        </td>
-                        <td>
-                          <p>+7 900 000 00 00</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="services">
-              <div elem="name">Услуги</div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>Тип размещения</p>
-                        </th>
-                        <th>
-                          <p>Количество</p>
-                        </th>
-                        <th>
-                          <p>Стоимость</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>Отель Карелия&SPA 4 Двухместное размещение взрослые</p>
-                        </td>
-                        <td>
-                          <div class="personal-cabinet__room">
-                            <i class="personal-cabinet__adult-icon">
-                              <small>2</small>
-                            </i>
-                            <span>x 1 номер</span>
-                          </div>
-                        </td>
-                        <td>
-                          <p>57 120 руб.</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="total-name-price-tour" colspan="2">
-                          <p>Итого стоимость тура</p>
-                        </td>
-                        <td class="total-price-tour">
-                          <p>57 120 руб.</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div elem="item">
-          <div elem="body">
-            <div elem="number">3</div>
-            <div elem="info">
-              <div elem="col">
-                <div elem="info-head">
-                  <a elem="name" href="#">Легенды Карелии Лето 2022</a>
-                  <div elem="not-pay">Не оплачена</div>
-                </div>
-                <div elem="info-tour">
-                  <div elem="dates">
-                    <div elem="date">05.10</div>
-                    <div elem="day">СР</div>
-                    <span>&mdash;</span>
-                    <div elem="date">09.10</div>
-                    <div elem="day" mods="weekend">ВС</div>
-                    <div elem="day-hours">5 дней / 4 ночи</div>
-                    <div elem="room">
-                      <i elem="adult-icon">
-                        <small>2</small>
-                      </i>
-                      <span>x 1 номер</span>
+                  <div elem="field">
+                    <span>Повторите пароль <span>*</span></span>
+                    <div elem="input" mods="new-password">
+                      <input type="password" value="12345">
+                      <button elem="button-show-password" class="js-button-show-password" type="button"></button>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div elem="col">
-                <div elem="info-head">
-                  <div elem="price">
-                    <span elem="not-full-price">17 120</span>
-                    <span>/</span>
-                    <span elem="full-price"> 57 120 руб.</span>
-                  </div>
-                </div>
-                <div elem="info-tour">
-                  <div elem="confirmed">
-                    <span>Подтверждена</span>
-                  </div>
-                  <div elem="confirmed">
-                    <span>30.06.2022</span>
-                  </div>
-                  <div elem="payment">
-                    <span>Частично оплачена (30%)</span>
-                    <!-- <a elem="button-pay" class="button-default" href="#">Внести платеж</a> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button elem="button-more" class="js-button-more-info" type="button"></button>
-          </div>
-          <div elem="container">
-            <div elem="content-item">
-              <div elem="name">Документы <span>(3)</span></div>
-              <div elem="content">
-                <div elem="docs">
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Договор</span>
-                  </a>
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Счет</span>
-                  </a>
-                  <a elem="doc" download="" href="#">
-                    <i>
-                      <svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.5 79H1.5V1H45.5858L63.5 18.9142V79Z" fill="white" stroke="#FF0B37" stroke-width="2" />
-                        <path d="M46.5 2L62.5 18H46.5V2Z" fill="#FF0B37" />
-                        <rect x="28.5" y="48" width="40" height="22" fill="#FF0B37" />
-                        <path
-                          d="M36.4092 54.1357H40.1074C41.0645 54.1357 41.8438 54.4365 42.4453 55.0381C43.0514 55.6396 43.3545 56.4189 43.3545 57.376C43.3545 58.3376 43.0469 59.1214 42.4316 59.7275C41.821 60.3291 41.0303 60.6299 40.0596 60.6299H37.9404V64H36.4092V54.1357ZM37.9404 55.4277V59.3447H39.6973C40.3626 59.3447 40.8776 59.1738 41.2422 58.832C41.6068 58.4902 41.7891 58.0072 41.7891 57.3828C41.7891 56.763 41.6068 56.2822 41.2422 55.9404C40.8822 55.5986 40.3695 55.4277 39.7041 55.4277H37.9404ZM44.6943 54.1357H48.1738C49.6413 54.1357 50.7852 54.5664 51.6055 55.4277C52.4303 56.2891 52.8428 57.4967 52.8428 59.0508C52.8428 60.6094 52.4326 61.8239 51.6123 62.6943C50.792 63.5648 49.6458 64 48.1738 64H44.6943V54.1357ZM46.2256 55.4551V62.6738H48.0303C49.0785 62.6738 49.8805 62.3639 50.4365 61.7441C50.9971 61.1243 51.2773 60.2311 51.2773 59.0645C51.2773 57.9023 50.9971 57.0114 50.4365 56.3916C49.876 55.7673 49.0739 55.4551 48.0303 55.4551H46.2256ZM55.8369 64H54.3057V54.1357H60.4648V55.4551H55.8369V58.5791H60.0752V59.8711H55.8369V64Z"
-                          fill="white" />
-                      </svg>
-                    </i>
-                    <span>Ваучер</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="payment">
-              <div elem="name">Оплата</div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>Предоплата</p>
-                        </th>
-                        <th>
-                          <p>%</p>
-                        </th>
-                        <th>
-                          <p>Оплатить до</p>
-                        </th>
-                        <th>
-                          <p>Дата оплаты</p>
-                        </th>
-                        <th>
-                          <p>Тип</p>
-                        </th>
-                        <th>
-                          <p>Плательщик</p>
-                        </th>
-                        <th>
-                          <p>Статус</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>17 120 руб.</p>
-                        </td>
-                        <td>
-                          <p>30%</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>Оплата на сайте</p>
-                        </td>
-                        <td>
-                          <p>Пастухов В. А.</p>
-                        </td>
-                        <td>
-                          <p>Оплачено</p>
-                        </td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>17 120 руб.</p>
-                        </td>
-                        <td>
-                          <p>30%</p>
-                        </td>
-                        <td>
-                          <p>12.10.2022</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>-</p>
-                        </td>
-                        <td>
-                          <p>Ожидает оплаты</p>
-                        </td>
-                        <td>
-                          <a class="personal-cabinet__button-pay button-default" href="#">Внести платеж</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="tourists">
-              <div elem="name">Туристы <span>(2)</span></div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>ФИО</p>
-                        </th>
-                        <th>
-                          <p>Документ</p>
-                        </th>
-                        <th>
-                          <p>Телефон</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>Пастухов Владимир Александрович</p>
-                        </td>
-                        <td>
-                          <p>Паспорт №1234 123456</p>
-                        </td>
-                        <td>
-                          <p>+7 900 000 00 00</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>Пастухов Владимир Александрович</p>
-                        </td>
-                        <td>
-                          <p>Паспорт №1234 123456</p>
-                        </td>
-                        <td>
-                          <p>+7 900 000 00 00</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div elem="content-item" mods="services">
-              <div elem="name">Услуги</div>
-              <div elem="content">
-                <div elem="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <p>Тип размещения</p>
-                        </th>
-                        <th>
-                          <p>Количество</p>
-                        </th>
-                        <th>
-                          <p>Стоимость</p>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>Отель Карелия&SPA 4 Двухместное размещение взрослые</p>
-                        </td>
-                        <td>
-                          <div class="personal-cabinet__room">
-                            <i class="personal-cabinet__adult-icon">
-                              <small>2</small>
-                            </i>
-                            <span>x 1 номер</span>
-                          </div>
-                        </td>
-                        <td>
-                          <p>57 120 руб.</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="total-name-price-tour" colspan="2">
-                          <p>Итого стоимость тура</p>
-                        </td>
-                        <td class="total-price-tour">
-                          <p>57 120 руб.</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+                <button elem="button-send" mods="save" class="button-default" type="submit">
+                  <span>Сменить пароль</span>
+                </button>
+              </form>
             </div>
           </div>
         </div>
