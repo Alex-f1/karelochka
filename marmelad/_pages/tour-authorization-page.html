@@ -1,0 +1,34 @@
+= yaml =
+pageTitle: Бронирование
+bodyClasses: booking-page
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+path: [
+  {"title": Главная},
+]
+= yaml =
+
+
+{% extends 'app.html' %}
+
+{% block main %}
+
+  <div block="step-menu">
+    <div elem="section">
+      <nav elem="nav" class="contain">
+        <ul>
+          <li><a class="_is-active" href="#"><span>Регистрация и Вход</span></a></li>
+          <li><a href="#"><span>Параметры тура</span></a></li>
+          <li><a href="#"><span>Способ оплаты</span></a></li>
+          <li><a href="#"><span>Подтверждение</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div><!-- step-menu -->
+
+  {% include "booking-block.html" %}
+
+{% endblock %}

@@ -1,0 +1,82 @@
+.step-menu
+  background-color: #EDF0F7
+
+  &__nav
+    ul
+      list-style: none
+      padding-left: 0
+      margin: 0
+      display: flex
+      align-items: center
+      counter-reset: number
+      overflow-x: auto
+
+      li
+        flex: 0 0 auto
+        margin-right: 24px
+
+        &:last-child
+          margin-right: 0
+          a
+            &:after
+              display: none
+
+        a
+          font-size: 16px
+          color: #7A808E
+          font-weight: 500
+          line-height: 1
+          text-decoration: none
+          display: flex
+          align-items: center
+          padding-top: 16px
+          padding-bottom: 16px
+          transition: color 0.3s, opacity 0.3s
+          opacity: 0.3
+          pointer-events: none
+
+          &._is-active
+            color: #000
+            pointer-events: none
+            opacity: 1
+
+            &:before
+              background-color: #FF0B37
+
+          &._is-completed
+            opacity: 1
+
+          &:hover
+            color: #000
+
+          &:before
+            content: counter(number)
+            counter-increment: number
+            font-size: 12px
+            color: #FFF
+            font-weight: 600
+            line-height: 1
+            display: flex
+            align-items: center
+            justify-content: center
+            text-align: center
+            flex: 0 0 24px
+            width: 24px
+            max-width: 24px
+            height: 24px
+            background-color: #7A808E
+            border-radius: 50%
+            margin-right: 8px
+            transition: background-color 0.3s
+
+          &:after
+            content: ''
+            flex: 0 0 6px
+            width: 6px
+            max-width: 6px
+            height: 10px
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.28069 5.35356L0.598709 8.03554C0.208185 8.42606 0.208184 9.05923 0.598708 9.44975C0.989233 9.84028 1.6224 9.84028 2.01292 9.44975L5.75556 5.70711C5.95083 5.51185 5.95083 5.19527 5.75556 5L2.01292 1.25736C1.6224 0.866836 0.989232 0.866836 0.598708 1.25736C0.208184 1.64788 0.208184 2.28105 0.598708 2.67157L3.28069 5.35356Z' fill='black'/%3E%3C/svg%3E%0A")
+            background-repeat: no-repeat
+            background-position: 0 0
+            background-size: contain
+            margin-left: 24px
