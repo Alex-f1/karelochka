@@ -1,0 +1,287 @@
+= yaml =
+pageTitle: Бронирование
+bodyClasses: booking-page
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+= yaml =
+
+
+{% extends 'app.html' %}
+
+{% block main %}
+
+<div block="step-menu">
+  <div elem="section">
+    <nav elem="nav" class="contain">
+      <ul>
+        <li><a class="_is-completed" href="booking-tour-authorization-page.html"><span>Регистрация и Вход</span></a>
+        </li>
+        <li><a class="_is-active" href="booking-tour-options-page.html"><span>Параметры тура</span></a></li>
+        <li><a href="#"><span>Способ оплаты</span></a></li>
+        <li><a href="#"><span>Подтверждение</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</div><!-- step-menu -->
+
+<div block="booking-block" mods="options">
+  <div elem="section">
+    <div elem="inner" class="contain">
+      <div elem="head">
+        <h1 elem="title">Параметры тура</h1>
+      </div>
+      <div elem="container">
+        <div elem="content">
+          <div block="contacts-info">
+            <div elem="section">
+              <form elem="form">
+                <div elem="wrapper">
+                  <div elem="fields">
+                    <div elem="name">
+                      Турист 1 <span>Пастухов Владимир Александрович</span>
+                      <button elem="button-remove-new-tourist" class="js-button-remove-new-tourist" type="button">
+                        <span>Удалить</span>
+                      </button>
+                    </div>
+                    <div elem="field-group">
+                      <div elem="field">
+                        <span>Фамилия <span>*</span></span>
+                        <div elem="input"><input type="text" placeholder="Пастухов"></div>
+                      </div>
+                      <div elem="field">
+                        <span>Имя <span>*</span></span>
+                        <div elem="input"><input type="text" placeholder="Владимир"></div>
+                      </div>
+                      <div elem="field">
+                        <span>Отчество</span>
+                        <div elem="input"><input type="text" placeholder="Александрович"></div>
+                      </div>
+                    </div>
+                    <div elem="field-group">
+                      <div elem="field" mods="date">
+                        <span>Дата рождения <span>*</span></span>
+                        <div elem="input">
+                          <input type="text" class="js-birthday-date" readonly placeholder="">
+                        </div>
+                      </div>
+                      <div elem="field">
+                        <span>Телефон <span>*</span></span>
+                        <div elem="input"><input type="tel" placeholder=""></div>
+                      </div>
+                      <div elem="field">
+                        <span>E-mail</span>
+                        <div elem="input"><input type="email" placeholder=""></div>
+                      </div>
+                    </div>
+                    <div elem="field-group">
+                      <div elem="field">
+                        <span>Документ <span>*</span></span>
+                        <div elem="select">
+                          <select>
+                            <option value="">Паспорт</option>
+                            <option value="">Права</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div elem="field">
+                        <span>Серия и номер <span>*</span></span>
+                        <div elem="input"><input type="text" placeholder=""></div>
+                      </div>
+                      <div elem="field">
+                        <span>Дата выдачи</span>
+                        <div elem="input"><input type="text" placeholder=""></div>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <span>Услуги и стоимость</span>
+                      <div elem="services-price">
+                        <div elem="services-name">
+                          <strong>Отель Белые ночи</strong>
+                          <span>Двухместное размещение взрослые</span>
+                        </div>
+                        <div elem="select">
+                          <select>
+                            <option value="">28 560 руб.</option>
+                            <option value="">38 560 руб.</option>
+                            <option value="">48 560 руб.</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <span>Дополнительные услуги</span>
+                      <div elem="additional-services">
+                        <div elem="checkbox" class="js-checkbox _is-checked">
+                          <label elem="label">
+                            <input type="checkbox" checked>
+                            <span elem="checkbox-name">Кижи - восьмое чудо света (06.10.2022)</span>
+                            <span elem="checkbox-price">+ 4 460 руб.</span>
+                          </label>
+                        </div>
+                        <div elem="checkbox" class="js-checkbox">
+                          <label elem="label">
+                            <input type="checkbox">
+                            <span elem="checkbox-name">
+                              Горный парк Рускеала и город Сортавала (07.10.2022)
+                            </span>
+                            <span elem="checkbox-price">+ 7 460 руб.</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div elem="total-price">Итого: 28 560 руб.</div>
+                  </div>
+                </div>
+              </form>
+              <form elem="form" class="_is-new-tourist">
+                <div elem="wrapper">
+                  <div elem="fields">
+                    <div elem="name">
+                      Турист 2 <span>Пастухов Владимир Александрович</span>
+                      <button elem="button-remove-new-tourist" class="js-button-remove-new-tourist" type="button">
+                        <span>Удалить</span>
+                      </button>
+                    </div>
+                    <div elem="field-group">
+                      <div elem="field">
+                        <span>Фамилия <span>*</span></span>
+                        <div elem="input"><input type="text" placeholder="Пастухов"></div>
+                      </div>
+                      <div elem="field">
+                        <span>Имя <span>*</span></span>
+                        <div elem="input"><input type="text" placeholder="Владимир"></div>
+                      </div>
+                      <div elem="field">
+                        <span>Отчество</span>
+                        <div elem="input"><input type="text" placeholder="Александрович"></div>
+                      </div>
+                    </div>
+                    <div elem="field-group">
+                      <div elem="field" mods="date">
+                        <span>Дата рождения <span>*</span></span>
+                        <div elem="input">
+                          <input type="text" class="js-birthday-date" readonly placeholder="">
+                        </div>
+                      </div>
+                      <div elem="field">
+                        <span>Телефон <span>*</span></span>
+                        <div elem="input"><input type="tel" placeholder=""></div>
+                      </div>
+                      <div elem="field">
+                        <span>E-mail</span>
+                        <div elem="input"><input type="email" placeholder=""></div>
+                      </div>
+                    </div>
+                    <div elem="field-group">
+                      <div elem="field">
+                        <span>Документ <span>*</span></span>
+                        <div elem="select">
+                          <select>
+                            <option value="">Паспорт</option>
+                            <option value="">Права</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div elem="field">
+                        <span>Серия и номер <span>*</span></span>
+                        <div elem="input"><input type="text" placeholder=""></div>
+                      </div>
+                      <div elem="field">
+                        <span>Дата выдачи</span>
+                        <div elem="input"><input type="text" placeholder=""></div>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <span>Услуги и стоимость</span>
+                      <div elem="services-price">
+                        <div elem="services-name">
+                          <strong>Отель Белые ночи</strong>
+                          <span>Двухместное размещение взрослые</span>
+                        </div>
+                        <div elem="select">
+                          <select>
+                            <option value="">28 560 руб.</option>
+                            <option value="">38 560 руб.</option>
+                            <option value="">48 560 руб.</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <span>Дополнительные услуги</span>
+                      <div elem="additional-services">
+                        <div elem="checkbox" class="js-checkbox">
+                          <label elem="label">
+                            <input type="checkbox">
+                            <span elem="checkbox-name">Кижи - восьмое чудо света (06.10.2022)</span>
+                            <span elem="checkbox-price">+ 4 460 руб.</span>
+                          </label>
+                        </div>
+                        <div elem="checkbox" class="js-checkbox">
+                          <label elem="label">
+                            <input type="checkbox">
+                            <span elem="checkbox-name">
+                              Горный парк Рускеала и город Сортавала (07.10.2022)
+                            </span>
+                            <span elem="checkbox-price">+ 7 460 руб.</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div elem="total-price">Итого: 28 560 руб.</div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <button elem="button-add-tourist" class="js-add-tourist" type="button">
+              <span>Добавить туриста</span>
+            </button>
+          </div><!-- contacts-info -->
+        </div>
+        <div elem="sidebar">
+          <div block="sidebar-booking">
+            <div elem="section">
+              <h2 elem="title">Легенды Карелии Лето 2022</h2>
+              <div elem="item">
+                <div elem="text">
+                  Тайны петроглифов <span></span> Мраморный каньон с голубой водой <span></span> Традиции карельских
+                  ремесленников <span></span> Крупнейший равнинный водопад
+                </div>
+                <div elem="dates">
+                  <div elem="date">05.10</div>
+                  <div elem="day">СР</div>
+                  <span>&mdash;</span>
+                  <div elem="date">09.10</div>
+                  <div elem="day" mods="weekend">ВС</div>
+                  <div elem="day-hours">5 дней / 4 ночи</div>
+                </div>
+              </div>
+              <div elem="item">
+                <div elem="prices">
+                  <div elem="name">Стоимость</div>
+                  <div elem="prices-info">
+                    <span>1 Пастухов В.А.</span>
+                    <span>33 020 руб.</span>
+                  </div>
+                  <div elem="prices-info">
+                    <span>2 Пастухова Т.И.</span>
+                    <span>28 560 руб.</span>
+                  </div>
+                  <div elem="price">57 120 руб.</div>
+                </div>
+                <a elem="button-pay" class="button-default" href="#">
+                  Перейти к Способу оплаты
+                </a>
+              </div>
+            </div>
+          </div><!-- sidebar-booking -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- booking-block -->
+
+{% endblock %}
