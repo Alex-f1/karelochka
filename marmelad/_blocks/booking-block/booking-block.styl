@@ -200,6 +200,106 @@
           padding-left: 0
           padding-right: 0
 
+  &--payment
+    .contacts-info
+      &__wrapper
+        @media (max-width: 1023px)
+          display: block
+
+      &__fields
+        max-width: 100%
+
+      &__select
+        position: relative
+        width: 100%
+
+      &__prepayment
+        color: #7A808E
+        position: absolute
+        top: 12px
+        right: 48px
+
+      &__label
+        flex-direction: column
+        align-items: flex-start
+        padding-right: 8px
+
+      &__form
+        @media (max-width: 1279px)
+          padding: 16px
+
+        &--prepayment
+          margin-bottom: 24px
+
+          .contacts-info__radio
+            &._is-checked
+              .contacts-info__label
+                background-color: transparent
+
+          .contacts-info__fields
+            &:last-child
+              padding-left: 34px
+
+              @media (max-width: 1023px)
+                padding-left: 0
+
+              .contacts-info__name
+                text-align: right
+                color: #FF0B37
+                margin-bottom: 42px
+
+                @media (max-width: 1023px)
+                  text-align: left
+                  margin-bottom: 16px
+
+                span
+                  color: #FF0B37
+
+              .contacts-info__text
+                padding-left: 50px
+                position: relative
+
+                @media (max-width: 1279px)
+                  padding-left: 30px
+
+                &:before
+                  content: ''
+                  width: 40px
+                  height: 40px
+                  position: absolute
+                  top: 0
+                  left: 0
+                  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='19' stroke='%230075FF' stroke-width='2'/%3E%3Cpath d='M16.4004 27V25.608H19.2084V17.424H16.5444V16.032H20.9364V25.608H23.5044V27H16.4004ZM19.9764 13.728C19.6404 13.728 19.3524 13.608 19.1124 13.368C18.8724 13.128 18.7524 12.84 18.7524 12.504C18.7524 12.152 18.8644 11.856 19.0884 11.616C19.3284 11.376 19.6244 11.256 19.9764 11.256C20.3124 11.256 20.6004 11.384 20.8404 11.64C21.0964 11.88 21.2244 12.168 21.2244 12.504C21.2244 12.84 21.0964 13.128 20.8404 13.368C20.6004 13.608 20.3124 13.728 19.9764 13.728Z' fill='%230075FF'/%3E%3C/svg%3E%0A")
+                  background-repeat: no-repeat
+                  background-position: 0 0
+                  background-size: contain
+
+                  @media (max-width: 1279px)
+                    width: 20px
+                    height: 20px
+
+                p
+                  font-size: 14px
+                  color: #2E3035
+                  font-weight: 500
+                  line-height: 1.2
+                  margin-top: 0
+                  margin-bottom: 16px
+
+          .contacts-info__label
+            padding: 0 0 0 34px
+            background-color: transparent
+
+            .contacts-info__input
+              width: 100%
+
+              input
+                display: block
+
+            &:before
+              top: 14px
+              left: 0
+
   &__head
     margin-bottom: 16px
 

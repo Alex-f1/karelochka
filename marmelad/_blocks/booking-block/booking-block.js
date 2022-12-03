@@ -21,6 +21,21 @@ function initCheckbox() {
   });
 }
 
+function initRadio() {
+  $('.js-radio').on('click', function (event) {
+    event.preventDefault()
+    $(this).addClass('_is-checked');
+
+    if ($(this).hasClass('_is-checked')) {
+      $(this).find('input').prop('checked', true);
+      $(this).closest('.contacts-info__field').siblings().find('.js-radio').removeClass('_is-checked');
+    } else {
+      $(this).closest('.contacts-info__field').siblings().find('.js-radio').removeClass('_is-checked');
+      $(this).find('input').prop('checked', false);
+    }
+  });
+}
+
 
 /* $('.js-add-tourist').on('click', function () {
   const formClone = $(this).closest('.contacts-info').find('.contacts-info__form').first().clone().addClass('_is-new-tourist');
@@ -57,3 +72,4 @@ function initCheckbox() {
 }); */
 
 initCheckbox();
+initRadio();

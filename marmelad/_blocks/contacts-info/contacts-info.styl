@@ -527,6 +527,36 @@
         &__checkbox-price
           opacity: 1
 
+  &__radio
+    & ^[0]
+      &__label
+        &:before
+          top 18px
+          border-radius: 50%
+          background-size: 12px 12px
+
+      &__select, &__input
+        pointer-events: none
+
+      &__select
+        .select2-container--default .select2-selection--single .select2-selection__rendered
+          color: #7A808E
+
+    &._is-checked
+      & ^[0]
+        &__label
+          background-color: #fff
+
+          &:before
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='12' height='12' rx='6' fill='%230075FF'/%3E%3C/svg%3E%0A")
+
+        &__select, &__input
+          pointer-events: all
+
+        &__select
+          .select2-container--default .select2-selection--single .select2-selection__rendered
+            color: #2e3035
+
   &__label
     font-size: 14px
     color: #2E3035
@@ -587,6 +617,31 @@
 
     @media (max-width: 479px)
       padding-right: 32px
+
+  &__radio-name
+    font-size: 16px !important
+    color: #2E3035 !important
+    font-weight: 500
+    line-height: 1.1
+    display: flex
+    align-items: center
+    margin-bottom: 8px
+    padding-left 10px
+    min-height: 23px
+
+  &__radio-text
+    font-size: 14px !important
+    color: #7A808E !important
+    font-weight: 500
+    line-height: 1.2 !important
+    padding-left: 10px
+
+    a
+      color: #0075FF
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
 
   &__button-add-tourist
     font-weight: 500

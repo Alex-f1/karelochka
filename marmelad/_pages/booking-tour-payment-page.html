@@ -1,0 +1,202 @@
+= yaml =
+pageTitle: Бронирование
+bodyClasses: booking-page
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+= yaml =
+
+
+{% extends 'app.html' %}
+
+{% block main %}
+
+<div block="step-menu">
+  <div elem="section">
+    <nav elem="nav" class="contain">
+      <ul>
+        <li><a class="_is-completed" href="booking-tour-authorization-page.html"><span>Регистрация и Вход</span></a>
+        </li>
+        <li><a class="_is-completed" href="booking-tour-options-page.html"><span>Параметры тура</span></a></li>
+        <li><a class="_is-active" href="booking-tour-payment-page.html"><span>Способ оплаты</span></a></li>
+        <li><a href="#"><span>Подтверждение</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</div><!-- step-menu -->
+
+<div block="booking-block" mods="payment">
+  <div elem="section">
+    <div elem="inner" class="contain">
+      <div elem="head">
+        <h1 elem="title">Способ оплаты</h1>
+      </div>
+      <div elem="container">
+        <div elem="content">
+          <div block="contacts-info">
+            <div elem="section">
+              <form elem="form" mods="prepayment">
+                <div elem="wrapper">
+                  <div elem="fields">
+                    <div elem="name">Выберите размер предоплаты</div>
+                    <div elem="field">
+                      <span>Предоплата</span>
+                      <div elem="select">
+                        <select>
+                          <option value="">30%</option>
+                          <option value="">40%</option>
+                          <option value="">50%</option>
+                        </select>
+                        <div elem="prepayment">17 136 руб.</div>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <span>Плательщик</span>
+                      <div elem="radio" class="js-radio _is-checked">
+                        <label elem="label">
+                          <input type="radio" name="payer" checked>
+                          <div elem="select">
+                            <select>
+                              <option value="">Владимир Пастухов</option>
+                              <option value="">Владимир Пастухов 2</option>
+                              <option value="">Владимир Пастухов 3</option>
+                            </select>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <span>Другое лицо</span>
+                      <div elem="radio" class="js-radio">
+                        <label elem="label">
+                          <input type="radio" name="payer">
+                          <div elem="input"><input type="text" placeholder=""></div>
+                        </label>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div elem="fields">
+                    <div elem="name">Стоимость тура <span>57 120 руб.</span></div>
+                    <div elem="text">
+                      <p>Для осуществления бронирования, необходимо внести предоплату.</p>
+                      <p>
+                        Предоплата за тур осуществляется в течение 7 дней после оформления.
+                      </p>
+                      <p>
+                        Полная оплата производится Клиентом за 21 день до начала тура. Если до начала тура менее 21 дня – в течение 7 дней после
+                        оформления заявки.
+                      </p>
+                      <p>
+                        Не можете оплатить заказ сегодня или нужна рассрочка - звоните <strong>8 800 550 57 67</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <form elem="form">
+                <div elem="wrapper">
+                  <div elem="fields">
+                    <div elem="name">Выберите способ оплаты</div>
+                    <div elem="field">
+                      <div elem="radio" class="js-radio _is-checked">
+                        <label elem="label">
+                          <input type="radio" name="payment_method" checked>
+                          <span elem="radio-name">Оплата на сайте <span><img src="img/cards-pic2.png" alt=""></span> </span>
+                          <span elem="radio-text">
+                            Банковские карты (VISA, MasterCard). Оплату покупки необходимо совершить в течение 7 дней после оформления заказа в
+                            размере 30%, полная оплата производится за 21 день до начала тура. Если предоплата не проведена в срок, заказ
+                            автоматически отменяется. Оплата на расчетный счет компании поступает в течение 4 рабочих дней. <a href="#">Подробнее о способе
+                            оплаты</a> 
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <div elem="radio" class="js-radio">
+                        <label elem="label">
+                          <input type="radio" name="payment_method">
+                          <span elem="radio-name">Счет</span>
+                          <span elem="radio-text">В любом отделении Сбербанка России.</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <div elem="radio" class="js-radio">
+                        <label elem="label">
+                          <input type="radio" name="payment_method">
+                          <span elem="radio-name">Наличными в офисе продаж</span>
+                          <span elem="radio-text">Республика Карелия, г. Кондопога, ул Пролетарская, д17А, оф 91</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div><!-- contacts-info -->
+        </div>
+        <div elem="sidebar">
+          <div block="sidebar-booking">
+            <div elem="section">
+              <h2 elem="title">Легенды Карелии Лето 2022</h2>
+              <div elem="item">
+                <div elem="text">
+                  Тайны петроглифов <span></span> Мраморный каньон с голубой водой <span></span> Традиции карельских
+                  ремесленников <span></span> Крупнейший равнинный водопад
+                </div>
+                <div elem="dates">
+                  <div elem="date">05.10</div>
+                  <div elem="day">СР</div>
+                  <span>&mdash;</span>
+                  <div elem="date">09.10</div>
+                  <div elem="day" mods="weekend">ВС</div>
+                  <div elem="day-hours">5 дней / 4 ночи</div>
+                </div>
+              </div>
+              <div elem="item">
+                <div elem="prices">
+                  <div elem="name">Стоимость</div>
+                  <div elem="prices-info">
+                    <span>1 Пастухов В.А.</span>
+                    <span>33 020 руб.</span>
+                  </div>
+                  <div elem="prices-info">
+                    <span>2 Пастухова Т.И.</span>
+                    <span>28 560 руб.</span>
+                  </div>
+                  <div elem="price">57 120 руб.</div>
+                </div>
+               
+              </div>
+              <div elem="item">
+                <div elem="prices">
+                  <div elem="name">Предоплата</div>
+                  <div elem="prices-info">
+                    <span>Размер предоплаты</span>
+                    <span>30%</span>
+                  </div>
+                  <div elem="prices-info">
+                    <span>Сумма предоплаты</span>
+                    <span>17 136 руб.</span>
+                  </div>
+                  <div elem="prices-info">
+                    <span>Способ оплаты</span>
+                    <span>Способ оплаты</span>
+                  </div>
+                </div>
+                <a elem="button-pay" class="button-default" href="#">
+                  Продолжить
+                </a>
+              </div>
+            </div>
+          </div><!-- sidebar-booking -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- booking-block -->
+
+{% endblock %}
