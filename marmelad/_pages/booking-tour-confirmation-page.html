@@ -1,0 +1,276 @@
+= yaml =
+pageTitle: Бронирование
+bodyClasses: booking-page
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+= yaml =
+
+
+{% extends 'app.html' %}
+
+{% block main %}
+
+<div block="step-menu">
+  <div elem="section">
+    <nav elem="nav" class="contain">
+      <ul>
+        <li><a class="_is-completed" href="booking-tour-authorization-page.html"><span>Регистрация и Вход</span></a>
+        </li>
+        <li><a class="_is-completed" href="booking-tour-options-page.html"><span>Параметры тура</span></a></li>
+        <li><a class="_is-completed" href="booking-tour-payment-page.html"><span>Способ оплаты</span></a></li>
+        <li><a class="_is-active" href="#"><span>Подтверждение</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</div><!-- step-menu -->
+
+<div block="booking-block" mods="confirmation">
+  <div elem="section">
+    <div elem="inner" class="contain">
+      <div elem="head">
+        <h1 elem="title">Подтверждение</h1>
+      </div>
+      <div elem="container">
+        <div elem="content">
+          <div block="personal-cabinet">
+            <div elem="section">
+              <div elem="item">
+                <div elem="content-item" mods="tourists">
+                  <div elem="name">Туристы</div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>ФИО</p>
+                            </th>
+                            <th>
+                              <p>Документ</p>
+                            </th>
+                            <th>
+                              <p>Телефон</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p><span>1</span> Пастухов Владимир Александрович</p>
+                            </td>
+                            <td>
+                              <p>Паспорт №1234 123456</p>
+                            </td>
+                            <td>
+                              <p>+7 900 000 00 00</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><span>2</span> Пастухова Татьяна Игоревна</p>
+                            </td>
+                            <td>
+                              <p>Паспорт №1234 123456</p>
+                            </td>
+                            <td>
+                              <p>+7 900 000 00 00</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="services">
+                  <div elem="name">Заказ <span>Легенды Карелии Лето 2022</span></div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>Тип размещения</p>
+                            </th>
+                            <th>
+                              <p>Количество</p>
+                            </th>
+                            <th>
+                              <p>Стоимость</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p><span>1</span>Отель Карелия&SPA 4 Двухместное размещение взрослые</p>
+                            </td>
+                            <td>
+                              <div class="personal-cabinet__room">
+                                <i class="personal-cabinet__adult-icon">
+                                  <small>2</small>
+                                </i>
+                                <span>x 1 номер</span>
+                              </div>
+                            </td>
+                            <td>
+                              <p>57 120 руб.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><span>2</span>Кижи - восьмое чудо света (06.10.2022)</p>
+                            </td>
+                            <td>
+                              <p>1</p>
+                            </td>
+                            <td>
+                              <p>4 700 руб.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="total-name-price-tour" colspan="2">
+                              <p>Итого стоимость тура</p>
+                            </td>
+                            <td class="total-price-tour">
+                              <p>57 120 руб.</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div elem="content-item" mods="payment">
+                  <div elem="name">Оплата</div>
+                  <div elem="content">
+                    <div elem="table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <p>Стоимость заказа</p>
+                            </th>
+                            <th>
+                              <p>Предоплата</p>
+                            </th>
+                            <th>
+                              <p>Тип</p>
+                            </th>
+                            <th>
+                              <p>Плательщик</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>57 120 руб.</p>
+                            </td>
+                            <td> 
+                              <p>30% &nbsp;&nbsp; 17 120 руб.</p>
+                            </td>
+                            <td>
+                              <p>Оплата на сайте</p>
+                            </td>
+                            <td>
+                              <p>Пастухов В. А.</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- personal-cabinet -->
+          <div block="contacts-info">
+            <div elem="section">
+              <form elem="form" mods="confirmation">
+                <div elem="wrapper">
+                  <div elem="fields">
+                    <div elem="field">
+                      <div elem="field">
+                        <span>Комментарии к заказу</span>
+                        <div elem="textarea"><textarea></textarea></div>
+                        <div elem="checkbox">
+                          <label elem="label">
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <span elem="checkbox-name">
+                              Я даю согласие на обработку персональных данных, принимаю договор оферты, оказания туристичеких услуг и страхования
+                            </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div><!-- contacts-info -->
+        </div>
+        <div elem="sidebar">
+          <div block="sidebar-booking">
+            <div elem="section">
+              <h2 elem="title">Легенды Карелии Лето 2022</h2>
+              <div elem="item">
+                <div elem="text">
+                  Тайны петроглифов <span></span> Мраморный каньон с голубой водой <span></span> Традиции карельских
+                  ремесленников <span></span> Крупнейший равнинный водопад
+                </div>
+                <div elem="dates">
+                  <div elem="date">05.10</div>
+                  <div elem="day">СР</div>
+                  <span>&mdash;</span>
+                  <div elem="date">09.10</div>
+                  <div elem="day" mods="weekend">ВС</div>
+                  <div elem="day-hours">5 дней / 4 ночи</div>
+                </div>
+              </div>
+              <div elem="item">
+                <div elem="prices">
+                  <div elem="name">Стоимость</div>
+                  <div elem="prices-info">
+                    <span>1 Пастухов В.А.</span>
+                    <span>33 020 руб.</span>
+                  </div>
+                  <div elem="prices-info">
+                    <span>2 Пастухова Т.И.</span>
+                    <span>28 560 руб.</span>
+                  </div>
+                  <div elem="price">57 120 руб.</div>
+                </div>
+               
+              </div>
+              <div elem="item">
+                <div elem="prices">
+                  <div elem="name">Предоплата</div>
+                  <div elem="prices-info">
+                    <span>Размер предоплаты</span>
+                    <span>30%</span>
+                  </div>
+                  <div elem="prices-info">
+                    <span>Сумма предоплаты</span>
+                    <span>17 136 руб.</span>
+                  </div>
+                  <div elem="prices-info">
+                    <span>Способ оплаты</span>
+                    <span>Оплата на сайте</span>
+                  </div>
+                </div>
+                <a elem="button-pay" class="button-default" href="#">
+                  Оформить бронь
+                </a>
+              </div>
+            </div>
+          </div><!-- sidebar-booking -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- booking-block -->
+
+{% endblock %}

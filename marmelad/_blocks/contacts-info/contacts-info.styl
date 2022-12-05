@@ -519,7 +519,7 @@
         &__label
           background-color: #fff
 
-          &:before
+          i
             background-color: #0075FF
             border: 2px solid #056EEB
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.65073 10.0001L12 2.958L9.8774 0.886477L4.5 6.00792L1.97186 3.58964L0 5.5103L4.65073 10.0001Z' fill='white'/%3E%3C/svg%3E%0A")
@@ -530,7 +530,7 @@
   &__radio
     & ^[0]
       &__label
-        &:before
+        i
           top 18px
           border-radius: 50%
           background-size: 12px 12px
@@ -547,7 +547,8 @@
         &__label
           background-color: #fff
 
-          &:before
+          i
+            background-color: transparent
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='12' height='12' rx='6' fill='%230075FF'/%3E%3C/svg%3E%0A")
 
         &__select, &__input
@@ -578,8 +579,15 @@
     input
       display: none
 
-    &:before
-      content: ''
+      &:checked
+
+        ~ i
+            background-color: #0075FF
+            border: 2px solid #056EEB
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.65073 10.0001L12 2.958L9.8774 0.886477L4.5 6.00792L1.97186 3.58964L0 5.5103L4.65073 10.0001Z' fill='white'/%3E%3C/svg%3E%0A")
+          
+
+    i
       position: absolute
       top: 15px
       left: 18px
@@ -592,6 +600,7 @@
       background-position: 50% 50%
       background-size: 12px 9px
       transition: background 0.3s, border-color 0.3s
+      display block
 
   &__checkbox-name
     margin-right: 10px

@@ -296,9 +296,54 @@
               input
                 display: block
 
-            &:before
+            i
               top: 14px
               left: 0
+
+  &--confirmation
+    .personal-cabinet
+      padding-bottom: 24px
+
+      &__name
+        margin-bottom: 16px
+        pointer-events: none
+
+        span
+          color: #7a808e
+
+      &__content-item
+        table
+          @media (max-width: 959px)
+            width: 960px
+
+          @media (max-width: 768px)
+            width: 100%
+
+          @media (max-width: 550px)
+            width: 480px
+
+    .contacts-info
+      &__fields
+        max-width: 100%
+
+      &__field
+        > span
+          display: block
+          margin-bottom: 16px
+
+      &__textarea
+        textarea
+          min-height: 96px
+
+      &__label
+        padding: 16px 0 0 28px
+        background-color: transparent
+
+        i
+          left: 0
+
+      &__checkbox-name
+        font-size: 14px
 
   &__head
     margin-bottom: 16px
