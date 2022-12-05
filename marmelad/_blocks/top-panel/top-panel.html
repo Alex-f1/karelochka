@@ -70,8 +70,9 @@
         </i>
         <span>info@tkkarelochka.ru</span>
       </a>
-      <div elem="user-cabinet">
+      <div elem="user-cabinet" {% if pageTitle == "Личный кабинет" or pageTitle == "Личный кабинет Турагент" %}mods="authorized"{% endif %}>
         <div elem="user-name">
+          {% if pageTitle != "Личный кабинет" and pageTitle != "Личный кабинет Турагент" %}
           <i elem="user-icon">
             <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -83,8 +84,17 @@
             </svg>
           </i>
           <span>Личный Кабинет</span>
+          {% endif %}
+
+          {% if pageTitle == "Личный кабинет" or pageTitle == "Личный кабинет Турагент" %}
+            <i elem="user-icon">
+              <span>ПВ</span>
+            </i>
+            <span>Пастухов Владимир</span>
+          {% endif %}
         </div>
         <ul elem="user-cabinet-menu">
+          {% if pageTitle != "Личный кабинет" and pageTitle != "Личный кабинет Турагент" %}
           <li elem="user-cabinet-item">
             <a elem="user-cabinet-link" href="#">
               <i elem="user-icon">
@@ -115,6 +125,24 @@
               <span>Войти как турагент</span>
             </a>
           </li>
+          {% endif %}
+          {% if pageTitle == "Личный кабинет" or pageTitle == "Личный кабинет Турагент" %}
+          <li elem="user-cabinet-item">
+            <a elem="user-cabinet-link" href="#">
+              <span>Мои заказы</span>
+            </a>
+          </li>
+          <li elem="user-cabinet-item">
+            <a elem="user-cabinet-link" href="#">
+              <span>Профиль</span>
+            </a>
+          </li>
+          <li elem="user-cabinet-item">
+            <a elem="user-cabinet-link" href="#">
+              <span>Выйти</span>
+            </a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </div>
