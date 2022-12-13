@@ -89,7 +89,7 @@
 
   &__middle, &__bottom
     @media (max-width: 1279px)
-      width: 33.333%
+      width: 50%
 
     @media (max-width: 959px)
       width: 50%
@@ -181,6 +181,13 @@
 
   &__explanation
     margin-left: 8px
+    position: relative
+
+    &:hover
+      span
+        opacity: 1
+        visibility: visible
+        transform: translateY(0)
 
     i
       display: block
@@ -192,7 +199,51 @@
       background-size: contain
 
     span
-      display: none
+      font-size: 14px
+      font-weight: 500
+      color: #7a808e
+      line-height: 1.2
+      position: absolute
+      top: 26px
+      left: -32px
+      width: 250px
+      background-color: #fff
+      border-radius: 10px
+      padding: 8px
+      box-shadow: 0px 16px 32px rgba(46, 48, 53, 0.4)
+      z-index: 5
+      opacity: 0
+      visibility: hidden
+      transform: translateY(-10px)
+      transition: transform 0.3s, opacity 0.3s, ease 0.5s
+
+      @media (min-width: 768px) and (max-width: 1279px)
+        top: -100px
+        left: 28px
+        width: 250px
+
+      @media (max-width: 439px)
+        left: -120px
+
+      &:before
+        content: ''
+        position: absolute
+        top: -6px
+        left: 34px
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 6px 6px 6px
+        border-color: transparent transparent #ffffff transparent
+
+        @media (min-width: 768px) and (max-width: 1279px)
+          top: auto
+          bottom: 22px
+          left: -9px
+          transform: rotate(-90deg)
+
+        @media (max-width: 439px)
+          left: 122px
 
   &__duration
     font-size: 14px
@@ -210,6 +261,17 @@
       padding-left: 12px
 
   &__nav
+    position: relative
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: -26px
+      width: 26px
+      height: 100%
+      z-index: 2
+
     ul
       list-style: none
       padding-left: 0
@@ -244,7 +306,6 @@
           transition: margin-left 0.3s, ease 0.3s
 
           &:hover
-
             @media (min-width: 1025px)
               color: #000
               margin-left: 0
@@ -364,6 +425,7 @@
     border-radius: 32px
     display: flex
     align-items: center
+    position: relative
 
     @media (max-width: 639px)
       order: 1
@@ -375,12 +437,13 @@
 
     span
       margin-right: 20px
+      position: relative
+      z-index: 6
 
       @media (max-width: 639px)
         margin-right: 10px
 
-    &:after
-      content: ''
+    i
       flex: 0 0 18px
       width: 18px
       max-width: 18px
@@ -390,9 +453,52 @@
       background-repeat: no-repeat
       background-position: 0 0
       background-size: contain
+      position: relative
+      z-index: 6
+      cursor: pointer
 
       @media (max-width: 479px)
         margin-left: 0
+
+  &__dates-dropdown
+    position: absolute
+    top: 100%
+    left: 0
+    transform: translateY(-39px)
+    width: 100%
+    background-color: #fff
+    border: 1px solid #EDF0F7
+    border-radius: 18px
+    z-index: 5
+    opacity: 0
+    visibility: hidden
+    transition: transform 0.3s, opacity 0.3s, ease 0.3s
+
+    &._is-show
+      opacity: 1
+      visibility: visible
+
+    ul
+      list-style: none
+      padding-top: 40px
+      padding-left: 0
+      margin: 0
+
+      li
+        border-top: 1px solid #EDF0F7
+
+        a
+          font-size: 16px
+          color: #7A808E
+          font-weight: 500
+          line-height: 1.1
+          text-decoration: none
+          padding: 10px 16px
+          display: block
+          transition: color 0.3s
+
+          &:hover
+            color: #FF0B37
 
   &__print-tour
     font-size: 14px
@@ -602,6 +708,11 @@
     font-weight: 500
     line-height: 1.1
     margin-bottom: 8px
+    transition: height 0.3s, ease 0.3s
+
+    &._is-part-text
+      height: 54px
+      overflow: hidden
 
     @media (max-width: 639px)
       font-size: 14px
@@ -614,11 +725,36 @@
     text-decoration: none
     display: flex
     align-items: center
+    justify-content: center
     background-color: #FFF
     border-radius: 16px
     padding: 8px 12px
     min-width: 110px
     width: 110px
+    transition: background-color 0.3s, color 0.3s
+    display: none
+
+    &:hover
+      color: #fff
+      background-color: #ff0b37
+
+      &:after
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.19239 1.4519L5.0962 5.5481L1 1.4519' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E%0A")
+
+    &._is-show
+      display: flex
+
+    &._is-more
+      span
+        &:before
+          content: attr(data-text-collapse)
+
+      &:after
+        transform: rotate(180deg)
+
+    span
+      &:before
+        content: attr(data-text-more)
 
     &:after
       content: ''
@@ -631,6 +767,7 @@
       background-position: 0 0
       background-size: contain
       margin-top: 2px
+      transition: background 0.3s
       margin-left: 4px
 
 // --------------------------- included-cost --------------------------------- //
@@ -1084,9 +1221,10 @@
     line-height: 1.1
     margin-top: 0
 
-    span
-      margin-left: 10px
+    span, a
       color: #fff
+      text-decoration: none
+      margin-left: 10px
       display: inline-block
       vertical-align: middle
       padding: 4px 8px
@@ -1097,6 +1235,12 @@
         display: block
         margin-top: 5px
         margin-left: 0
+
+    a
+      transition: background-color 0.3s
+
+      &:hover
+        background-color: #FF0B37
 
   &__total-rating
     list-style: none

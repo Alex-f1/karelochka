@@ -176,9 +176,10 @@
     line-height: 1.1
     margin-top: 0
 
-    span
-      margin-left: 10px
+    span, a
       color: #fff
+      text-decoration: none
+      margin-left: 10px
       display: inline-block
       vertical-align: middle
       padding: 4px 8px
@@ -189,6 +190,12 @@
         display: block
         margin-top: 5px
         margin-left: 0
+
+    a
+      transition: background-color 0.3s
+
+      &:hover
+        background-color: #FF0B37
 
   &__total-rating
     list-style: none

@@ -327,7 +327,7 @@
             tr, th
               td
                 &:first-child
-                  width: 60%    
+                  width: 60%
 
     .contacts-info
       &__fields
@@ -508,6 +508,13 @@
 
   &__explanation
     margin-left: 8px
+    position: relative
+
+    &:hover
+      span
+        opacity: 1
+        visibility: visible
+        transform: translateY(0)
 
     i
       display: block
@@ -519,7 +526,40 @@
       background-size: contain
 
     span
-      display: none
+      font-size: 14px
+      font-weight: 500
+      color: #7a808e
+      line-height: 1.2
+      position: absolute
+      top: 26px
+      left: -78px
+      width: 250px
+      background-color: #fff
+      border-radius: 10px
+      padding: 8px
+      box-shadow: 0px 16px 32px rgba(46, 48, 53, 0.4)
+      z-index: 5
+      opacity: 0
+      visibility: hidden
+      transform: translateY(-10px)
+      transition: transform 0.3s, opacity 0.3s, ease 0.5s
+
+      @media (max-width: 439px)
+        left: -164px
+
+      &:before
+        content: ''
+        position: absolute
+        top: -6px
+        left: 80px
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 6px 6px 6px
+        border-color: transparent transparent #ffffff transparent
+
+        @media (max-width: 439px)
+          left: 166px
 
   &__name
     font-size: 20px

@@ -1,0 +1,42 @@
+= yaml =
+pageTitle: Личный кабинет Турагент
+bodyClasses:
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+path: [
+  {"title": Главная},
+]
+= yaml =
+
+{% extends 'app.html' %}
+
+{% block main %}
+<div block="personal-cabinet">
+  <div elem="section">
+    <div elem="tabs-panel">
+      <div elem="tabs" class="contain">
+        <a elem="button-tab" class="js-button-tab" href="cabinet-tourist-page.html">Мои заявки</a>
+        
+        {% if pageTitle == "Личный кабинет Турагент" %}
+        <a elem="button-tab" class="_is-active js-button-tab" href="cabinet-travel-agent-profile-page.html">Настройки экспорта</a>
+        {% endif %}
+        
+        <a elem="button-tab" class="js-button-tab" href="cabinet-tourist-profile-page.html">Профиль</a>
+      </div>
+    </div>
+    <div elem="tabs-content">
+      <div elem="tab-content">
+        <div elem="inner" class="contain">
+          <div elem="head">
+            {% include "bread-crumbs.html" %}
+            <h1 elem="title">Настройки экспорта</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- personal-cabinet -->
+{% endblock %}

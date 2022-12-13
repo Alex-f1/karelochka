@@ -27,9 +27,11 @@
 
   &__title-accent
     color: #EDF0F7
+    text-decoration: none
     background-color: #2E3035
     border-radius: 34px
     padding: 2px 24px 10px 24px
+    transition: background-color 0.3s, color 0.3s
 
     @media (max-width: 767px)
       padding-top: 0
@@ -38,9 +40,15 @@
       display: inline-block
       vertical-align: middle
 
+    &:hover
+      background-color: #FF0B37
+
     &--excursions
       color: #2E3035
       background-color: #EDF0F7
+
+      &:hover
+        color: #fff
 
   &__sorting-panel
     display: flex

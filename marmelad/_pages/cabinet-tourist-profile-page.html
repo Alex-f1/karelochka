@@ -1,0 +1,122 @@
+= yaml =
+pageTitle: Личный кабинет
+bodyClasses:
+layout: !!map
+  header: true
+  footer: true
+  left: false
+  right: false
+path: [
+  {"title": Главная},
+]
+= yaml =
+
+{% extends 'app.html' %}
+
+{% block main %}
+
+  <div block="personal-cabinet">
+    <div elem="section">
+      <div elem="tabs-panel">
+        <div elem="tabs" class="contain">
+          <a elem="button-tab" class="js-button-tab" href="cabinet-tourist-page.html">Мои заявки</a> 
+          <a elem="button-tab" class="_is-active js-button-tab" href="cabinet-tourist-profile-page.html">Профиль</a>
+        </div>
+      </div>
+      <div elem="tabs-content">
+  
+        <div elem="tab-content">
+          <div elem="inner" class="contain">
+            <div elem="head">
+              {% include "bread-crumbs.html" %}
+              <h1 elem="title">Профиль</h1>
+              <div block="contacts-info" mods="personal-cabinet">
+                <form elem="form" mods="personal-data">
+                  <div elem="name">Личные данные</div>
+                  <div elem="wrapper">
+                    <div elem="fields">
+                      <div elem="field">
+                        <span>Имя <span>*</span></span>
+                        <div elem="input"><input type="text" value="Владимир" placeholder="Владимир"></div>
+                      </div>
+                      <div elem="field">
+                        <span>Фамилия <span>*</span></span>
+                        <div elem="input"><input type="text" value="Пастухов" placeholder="Пастухов"></div>
+                      </div>
+                      <div elem="field">
+                        <span>Логин<span>*</span></span>
+                        <div elem="input">
+                          <input type="text" value="vlpastuhov@test.ru" placeholder="vlpastuhov@test.ru">
+                        </div>
+                      </div>
+                    </div>
+                    <div elem="fields">
+                      <div elem="field">
+                        <span>Страна <span>*</span></span>
+                        <div elem="select">
+                          <select>
+                            <option value="Россия">Россия</option>
+                            <option value="Беларусь">Беларусь</option>
+                            <option value="Казахстан">Казахстан</option>
+                            <option value="Киргизия">Киргизия</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div elem="field">
+                        <span>Адрес<span>*</span></span>
+                        <div elem="input">
+                          <input type="text" placeholder="">
+                        </div>
+                      </div>
+                      <div elem="field-double">
+                        <div elem="field">
+                          <span>E-mail <span>*</span></span>
+                          <div elem="input"><input type="text" value="vlpastuhov@test.ru"
+                              placeholder="vlpastuhov@test.ru"></div>
+                        </div>
+                        <div elem="field">
+                          <span>Телефон</span>
+                          <div elem="input"><input type="text" placeholder=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button elem="button-send" mods="save" class="button-default" type="submit">
+                    <span>Сохранить</span>
+                  </button>
+                </form>
+                <form elem="form" mods="change-password">
+                  <div elem="name">Сменить пароль</div>
+                  <div elem="fields">
+                    <div elem="field">
+                      <span>Старый Пароль <span>*</span></span>
+                      <div elem="input"><input type="text" value="Владимир" placeholder="Владимир"></div>
+                    </div>
+                    <div elem="field">
+                      <span>Новый Пароль <span>*</span></span>
+                      <div elem="input" mods="new-password">
+                        <input type="password" value="12345" placeholder="12345">
+                        <button elem="button-show-password" class="js-button-show-password" type="button"></button>
+                      </div>
+                    </div>
+                    <div elem="field">
+                      <span>Повторите пароль <span>*</span></span>
+                      <div elem="input" mods="new-password">
+                        <input type="password" value="12345">
+                        <button elem="button-show-password" class="js-button-show-password" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <button elem="button-send" mods="save" class="button-default" type="submit">
+                    <span>Сменить пароль</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- personal-cabinet -->
+
+{% endblock %}

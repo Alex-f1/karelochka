@@ -476,15 +476,40 @@
       background-size: contain
       margin-right: 10px
 
-  &__services-price
+  &__services-info
     display: flex
     align-items: center
     background-color: #FFF
     border-radius: 8px
-    padding: 16px
+    padding: 16px 36px 16px 16px
+    margin-bottom: 8px
+    position: relative
+    cursor: pointer
 
     @media (max-width: 479px)
       display: block
+
+    &:last-child
+      margin-bottom: 0
+
+    &:after
+      content: ''
+      position: absolute
+      top: 32px
+      right: 16px
+      width: 10px
+      height: 7px
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 3.63384L2.31802 0.951858C1.9275 0.561334 1.29433 0.561333 0.903808 0.951858C0.513284 1.34238 0.513284 1.97555 0.903808 2.36607L4.64645 6.10871C4.84171 6.30398 5.1583 6.30398 5.35356 6.10871L9.0962 2.36607C9.48672 1.97555 9.48672 1.34238 9.0962 0.951858C8.70568 0.561333 8.07251 0.561334 7.68199 0.951858L5 3.63384Z' fill='%232E3035'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+      transition: transform 0.3s, ease 0.3s
+
+    &._is-active
+      cursor: default
+
+      &:after
+        transform: rotate(180deg)
 
     & ^[0]
       &__select
@@ -505,6 +530,7 @@
       font-weight: 500
       line-height: 1.1
       display: block
+      transition: color 0.3s
 
     span
       font-size: 14px
@@ -512,6 +538,18 @@
       font-weight: 500
       line-height: 1.1
       display: block
+      transition: color 0.3s
+
+  &__services-price
+    font-size: 16px
+    color: #2e3035
+    font-weight: 500
+    line-height: 1
+    margin-left: auto
+    transition: color 0.3s
+
+    @media (max-width: 479px)
+      margin-top: 8px
 
   &__checkbox
     &._is-checked
@@ -527,11 +565,55 @@
         &__checkbox-price
           opacity: 1
 
+  &__services-dropdown
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
+    background-color: #fff
+    border-radius: 0 0 8px 8px
+    z-index: 5
+    opacity: 0
+    visibility: hidden
+    transform: translateY(-10px)
+    transition: opacity 0.3s, transform 0.3s, ease 0.3s
+
+    &._is-show
+      opacity: 1
+      visibility: visible
+      transform: translateY(0)
+
+  &__services-dropdown-item
+    display: flex
+    align-items: center
+    padding: 16px 36px 16px 16px
+    border-top: 2px solid #edf0f7
+    cursor: pointer
+    transition: background-color 0.3s
+
+    @media (max-width: 479px)
+      display: block
+
+    &:hover
+      background-color: #ff0b37
+
+      & ^[0]
+        &__services-name
+          strong, span
+            color: #fff
+
+        &__services-price
+          color: #fff
+
+    &._is-services-selected
+      background-color: #ddd
+      pointer-events: none
+
   &__radio
     & ^[0]
       &__label
         i
-          top 18px
+          top: 18px
           border-radius: 50%
           background-size: 12px 12px
 
@@ -580,12 +662,10 @@
       display: none
 
       &:checked
-
         ~ i
-            background-color: #0075FF
-            border: 2px solid #056EEB
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.65073 10.0001L12 2.958L9.8774 0.886477L4.5 6.00792L1.97186 3.58964L0 5.5103L4.65073 10.0001Z' fill='white'/%3E%3C/svg%3E%0A")
-          
+          background-color: #0075FF
+          border: 2px solid #056EEB
+          background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.65073 10.0001L12 2.958L9.8774 0.886477L4.5 6.00792L1.97186 3.58964L0 5.5103L4.65073 10.0001Z' fill='white'/%3E%3C/svg%3E%0A")
 
     i
       position: absolute
@@ -600,7 +680,7 @@
       background-position: 50% 50%
       background-size: 12px 9px
       transition: background 0.3s, border-color 0.3s
-      display block
+      display: block
 
   &__checkbox-name
     margin-right: 10px
@@ -635,7 +715,7 @@
     display: flex
     align-items: center
     margin-bottom: 8px
-    padding-left 10px
+    padding-left: 10px
     min-height: 23px
 
   &__radio-text

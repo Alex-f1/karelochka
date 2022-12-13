@@ -1,8 +1,16 @@
 function initViewedToursSlider() {
+  let loopToursSlider = false; 
+  
+  if ($('.viewed-tours__item').length > 4) {
+    loopToursSlider = true;
+  } else {
+    $('.viewed-tours .swiper-button-prev').remove();
+    $('.viewed-tours .swiper-button-next').remove();
+  }
   const viewedToursSlider = new Swiper(".js-viewed-tours-slider", {
     slidesPerView: 4,
     spaceBetween: 32,
-    loop: true,
+    loop: loopToursSlider,
     speed: 1000,
     pagination: {
       el: ".swiper-pagination",

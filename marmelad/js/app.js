@@ -25,5 +25,12 @@ if (window.NodeList && !NodeList.prototype.forEach) {
  * JQUERY Actions
  * ========================================================================== */
 $(function() {
+  $(window).on('load resize', function () {
+    const cardTourContainer = $('.card-tour__container');
+    let containOffSetLeft = $('.contain').offset().left + 20;
+
+    cardTourContainer.css('margin-left', containOffSetLeft);
+
+  });
   //=require ../_blocks/**/*.js
 });
