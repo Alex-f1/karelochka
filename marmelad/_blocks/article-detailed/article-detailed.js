@@ -2,7 +2,7 @@ const galleryContentThumb = new Swiper(".js-gallery-content-thumb", {
   slidesPerView: "auto",
   spaceBetween: 10,
   watchSlidesProgress: true,
-  loop: true,
+  loop: false,
 });
 const galleryContentSlider = new Swiper(".js-gallery-content-slider", {
   slidesPerView: 1,
